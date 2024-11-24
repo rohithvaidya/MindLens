@@ -1,0 +1,22 @@
+# quality_drift_check { #nodes.quality_drift_check }
+
+`quality_drift_check(X_train, X_test)`
+
+Checks for data drift between training and test datasets using predefined metrics.
+
+This function runs a data drift analysis between the provided training (`X_train`)
+and test (`X_test`) datasets. It generates a drift report using the `Report` class
+with the `DataDriftPreset` metrics and returns the report in JSON format.
+
+## Parameters
+
+| Name      | Type         | Description                                                                              | Default    |
+|-----------|--------------|------------------------------------------------------------------------------------------|------------|
+| `X_train` | pd.DataFrame | The reference dataset (usually the training dataset) to check for data drift.            | _required_ |
+| `X_test`  | pd.DataFrame | The current dataset (usually the test dataset) to compare against the reference dataset. | _required_ |
+
+## Returns
+
+| Type   | Description                                                      |
+|--------|------------------------------------------------------------------|
+| dict   | A dictionary containing the drift report results in JSON format. |

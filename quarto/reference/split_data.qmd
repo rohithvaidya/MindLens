@@ -1,0 +1,11 @@
+# split_data { #nodes.split_data }
+
+`split_data(data, parameters)`
+
+Splits data into features and targets training and test sets.
+
+Args:
+    data: Data containing features and target.
+    parameters: Parameters defined in parameters/data_science.yml.
+Returns:
+    Split data.

@@ -1,0 +1,45 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"About\"\n",
+        "---\n",
+        "\n",
+        "\n",
+        "About this site\n"
+      ],
+      "id": "e26baf7a"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import quartodoc\n",
+        "\n",
+        "# Automatically generate API docs for your Python file/module\n",
+        "quartodoc.Documentation(\n",
+        "  modules=['../src/rohith_ai_839/pipelines/data_science/pipeline.py'],  # Replace with your Python module or file\n",
+        "  show_bases=True,             # Show base classes in class docs (optional)\n",
+        "  show_private=False,          # Do not show private methods (optional)\n",
+        "  include_source=True          # Include source code in the docs (optional)\n",
+        ").render()"
+      ],
+      "id": "75115687",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "kedro_rohith_ai_839",
+      "language": "python",
+      "display_name": "Kedro (rohith_ai_839)",
+      "path": "C:\\Users\\rohit\\AppData\\Roaming\\jupyter\\kernels\\kedro_rohith_ai_839"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

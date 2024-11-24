@@ -1,0 +1,59 @@
+project:
+  type: website
+
+metadata-files:
+  - _sidebar.yml
+
+quartodoc:
+  # the name used to import the package you want to create reference docs for
+  # write sidebar data to this file
+  sidebar: _sidebar.yml
+  package: quartodoc
+  #source_dir: E:/Lab Files/Repos/rohith-ai-839/src/rohith_ai_839/pipelines/data_science/
+  source_dir: ../src/rohith_ai_839/pipelines/data_science/
+  sections:
+    - title: ML Stagewise Documentation
+      desc: Modeling Stage
+      package: sklearn.linear_model
+      contents: 
+        # the functions being documented in the package.
+        # you can refer to anything: class methods, modules, etc..
+        - LogisticRegression
+    - title: ML Stagewise Documentation
+      desc: Drfit Stage
+      package: evidently.metric_preset
+      contents: 
+        # the functions being documented in the package.
+        # you can refer to anything: class methods, modules, etc..
+        - DataDriftPreset
+
+    - title: ML Stagewise Documentation 
+      desc: Nodes
+      package: nodes
+      contents: 
+        # the functions being documented in the package.
+        # you can refer to anything: class methods, modules, etc..
+        - split_data
+        - train_model
+        - quality_drift_check
+        - evaluate_model
+        - prediction_drift_check
+        - plot_and_save
+        - report_plotly
+
+website:
+  title: "AI 839 - ML Project"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

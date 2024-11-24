@@ -1,0 +1,31 @@
+# Function reference {.doc .doc-index}
+
+## ML Stagewise Documentation
+
+Modeling Stage
+
+| | |
+| --- | --- |
+| [LogisticRegression](LogisticRegression.qmd#sklearn.linear_model.LogisticRegression) | Logistic Regression (aka logit, MaxEnt) classifier. |
+
+## ML Stagewise Documentation
+
+Drfit Stage
+
+| | |
+| --- | --- |
+| [DataDriftPreset](DataDriftPreset.qmd#evidently.metric_preset.DataDriftPreset) | Metric Preset for Data Drift analysis. |
+
+## ML Stagewise Documentation
+
+Nodes
+
+| | |
+| --- | --- |
+| [split_data](split_data.qmd#nodes.split_data) | Splits data into features and targets training and test sets. |
+| [train_model](train_model.qmd#nodes.train_model) | Trains the Logistic regression model. |
+| [quality_drift_check](quality_drift_check.qmd#nodes.quality_drift_check) | Checks for data drift between training and test datasets using predefined metrics. |
+| [evaluate_model](evaluate_model.qmd#nodes.evaluate_model) | Calculates and logs the coefficient of determination. |
+| [prediction_drift_check](prediction_drift_check.qmd#nodes.prediction_drift_check) | Checks for prediction drift between the true and predicted values. |
+| [plot_and_save](plot_and_save.qmd#nodes.plot_and_save) | Plots and saves the probability density distribution for a specified column. |
+| [report_plotly](report_plotly.qmd#nodes.report_plotly) | Generates and saves distribution plots for data and prediction drift using Plotly. |

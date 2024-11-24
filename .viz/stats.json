@@ -1,0 +1,1 @@
+{"dataset": {"rows": 100, "columns": 32, "file_size": 33040}, "model_input_dataset": {"rows": 100, "columns": 51, "file_size": 12288}, "X_train": {"rows": 80, "columns": 50}, "X_test": {"rows": 20, "columns": 50, "file_size": 4096}, "y_test": {"rows": 20, "columns": 1, "file_size": 4096}}

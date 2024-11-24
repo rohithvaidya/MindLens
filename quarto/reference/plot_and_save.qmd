@@ -1,0 +1,28 @@
+# plot_and_save { #nodes.plot_and_save }
+
+`plot_and_save(column_name, current_data, reference_data)`
+
+Plots and saves the probability density distribution for a specified column.
+
+This function compares the probability density distribution between the current and
+reference datasets for a specified column. It creates a line plot for both datasets and saves
+the plot as a PNG file to a predefined location.
+
+## Parameters
+
+| Name             | Type         | Description                                                                            | Default    |
+|------------------|--------------|----------------------------------------------------------------------------------------|------------|
+| `column_name`    | str          | The name of the column for which the distribution plot is generated.                   | _required_ |
+| `current_data`   | pd.DataFrame | The current dataset containing columns 'x' (values) and 'y' (probability densities).   | _required_ |
+| `reference_data` | pd.DataFrame | The reference dataset containing columns 'x' (values) and 'y' (probability densities). | _required_ |
+
+## Returns
+
+| Type   | Description                                                                          |
+|--------|--------------------------------------------------------------------------------------|
+| None   | This function does not return any value, but saves the generated plot as a PNG file. |
+
+## Side Effects
+
+A PNG file named after the column is saved to 'data/08_reporting/' containing the
+distribution plot for the specified column.

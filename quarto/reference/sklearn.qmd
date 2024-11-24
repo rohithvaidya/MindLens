@@ -1,0 +1,5 @@
+# sklearn { #sklearn.sklearn }
+
+`sklearn`
+
+Configure global settings and get information about the working environment.

@@ -1,0 +1,45 @@
+name: Trigger Generic Eval Workflow
+
+on:
+  push:
+    branches:
+      - hw05
+  pull_request:
+    branches:
+      - hw05
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the repository code
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    # Set up Python environment
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.8'  # Use the Python version your project requires
+
+    # Install dependencies
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt  # If you have a requirements.txt file
+        # Alternatively, if you use pyproject.toml:
+        # pip install poetry
+        # poetry install
+
+    # Run tests
+    #- name: Run Unit Tests
+    #  run: |
+    #    pip install pytest  # Ensure pytest is installed
+     #   pytest  # Run your tests folder
+        # Optionally, if you use pytest-cov for coverage:
+        # pytest --cov=src tests/
+
+    - name: Run Kedro Pipeline
+      run: |
+        kedro run --from-nodes=evaluate_model_node

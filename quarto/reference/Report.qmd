@@ -1,0 +1,4 @@
+# Report { #evidently.report.Report }
+
+`report.Report(self, metrics, options=None, timestamp=None, id=None, metadata=None, tags=None, model_id=None, reference_id=None, batch_size=None, dataset_id=None, name=None)`
+

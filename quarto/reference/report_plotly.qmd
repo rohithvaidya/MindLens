@@ -1,0 +1,28 @@
+# report_plotly { #nodes.report_plotly }
+
+`report_plotly(data_drift, pred_drift)`
+
+Generates and saves distribution plots for data and prediction drift using Plotly.
+
+This function processes the drift reports from the data drift and prediction drift analyses,
+extracts the small distribution data for each column, and generates distribution plots using
+the `plot_and_save` function. It handles both data drift and prediction drift reports, saving
+the resulting plots as PNG files.
+
+## Parameters
+
+| Name         | Type   | Description                                                                                          | Default    |
+|--------------|--------|------------------------------------------------------------------------------------------------------|------------|
+| `data_drift` | dict   | A dictionary containing the data drift report, including metrics and drift results by columns.       | _required_ |
+| `pred_drift` | dict   | A dictionary containing the prediction drift report, including metrics and drift results by columns. | _required_ |
+
+## Returns
+
+| Type   | Description                                                                                                       |
+|--------|-------------------------------------------------------------------------------------------------------------------|
+| None   | This function does not return any value, but saves the generated distribution plots as PNG files for each column. |
+
+## Side Effects
+
+PNG files are saved to 'data/08_reporting/' for each column's distribution plot based
+on the drift reports.

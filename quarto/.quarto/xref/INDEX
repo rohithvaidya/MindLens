@@ -1,0 +1,50 @@
+{
+  "about.qmd": {
+    "about.html": "626ffa9f"
+  },
+  "index.qmd": {
+    "index.html": "f69df39c"
+  },
+  "reference/get_object.qmd": {
+    "get_object.html": "4f171a11"
+  },
+  "reference/index.qmd": {
+    "index.html": "3d754527"
+  },
+  "reference/preview.qmd": {
+    "preview.html": "9df1138a"
+  },
+  "reference/sklearn.qmd": {
+    "sklearn.html": "f9ee6b22"
+  },
+  "reference/LogisticRegression.qmd": {
+    "LogisticRegression.html": "fea6ff80"
+  },
+  "reference/DataDriftPreset.qmd": {
+    "DataDriftPreset.html": "ea27cfd0"
+  },
+  "reference/Report.qmd": {
+    "Report.html": "76c0f21a"
+  },
+  "reference/split_data.qmd": {
+    "split_data.html": "df616048"
+  },
+  "reference/evaluate_model.qmd": {
+    "evaluate_model.html": "1ab76ac1"
+  },
+  "reference/plot_and_save.qmd": {
+    "plot_and_save.html": "f84ffc46"
+  },
+  "reference/prediction_drift_check.qmd": {
+    "prediction_drift_check.html": "5c82fc33"
+  },
+  "reference/quality_drift_check.qmd": {
+    "quality_drift_check.html": "a064671b"
+  },
+  "reference/report_plotly.qmd": {
+    "report_plotly.html": "97b884ea"
+  },
+  "reference/train_model.qmd": {
+    "train_model.html": "797b2783"
+  }
+}

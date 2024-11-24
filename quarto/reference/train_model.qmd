@@ -1,0 +1,12 @@
+# train_model { #nodes.train_model }
+
+`train_model(X_train, y_train)`
+
+Trains the Logistic regression model.
+
+Args:
+    X_train: Training data of independent features.
+    y_train: Training data for target decision.
+
+Returns:
+    Trained model.

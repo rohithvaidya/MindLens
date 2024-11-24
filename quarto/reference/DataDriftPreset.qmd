@@ -1,0 +1,10 @@
+# DataDriftPreset { #evidently.metric_preset.DataDriftPreset }
+
+`metric_preset.DataDriftPreset(self, columns=None, embeddings=None, embeddings_drift_method=None, drift_share=0.5, stattest=None, cat_stattest=None, num_stattest=None, text_stattest=None, per_column_stattest=None, stattest_threshold=None, cat_stattest_threshold=None, num_stattest_threshold=None, text_stattest_threshold=None, per_column_stattest_threshold=None)`
+
+Metric Preset for Data Drift analysis.
+
+Contains metrics:
+- DatasetDriftMetric
+- DataDriftTable
+- EmbeddingsDriftMetric

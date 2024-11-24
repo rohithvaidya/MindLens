@@ -1,0 +1,27 @@
+# prediction_drift_check { #nodes.prediction_drift_check }
+
+`prediction_drift_check(y_test, y_pred)`
+
+Checks for prediction drift between the true and predicted values.
+
+This function runs a data drift analysis between the provided true values (`y_test`)
+and predicted values (`y_pred`). It generates a drift report using the `Report` class
+with the `DataDriftPreset` metrics, saves the report as an HTML file, and returns the
+drift report in JSON format.
+
+## Parameters
+
+| Name     | Type      | Description                                                             | Default    |
+|----------|-----------|-------------------------------------------------------------------------|------------|
+| `y_test` | pd.Series | The reference true values (ground truth) to check for prediction drift. | _required_ |
+| `y_pred` | pd.Series | The predicted values to compare against the reference true values.      | _required_ |
+
+## Returns
+
+| Type   | Description                                                      |
+|--------|------------------------------------------------------------------|
+| dict   | A dictionary containing the drift report results in JSON format. |
+
+## Side Effects
+
+An HTML file named 'evidently_plot.html' is saved to 'data/08_reporting/' containing the visual report.

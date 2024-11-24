@@ -1,0 +1,10 @@
+# evaluate_model { #nodes.evaluate_model }
+
+`evaluate_model(regressor, X_test, y_test)`
+
+Calculates and logs the coefficient of determination.
+
+Args:
+    regressor: Trained model.
+    X_test: Testing data of independent features.
+    y_test: Testing data for target decision.
