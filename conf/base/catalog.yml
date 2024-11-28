@@ -111,3 +111,21 @@ y_test:
   save_args:
     index: False
   versioned: True
+
+depression_real:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/depression_real.csv
+
+depression_synthetic:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/depression_synthetic.csv
+
+depression_real_cleaned:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/depression_real.csv
+  versioned: True
+
+depression_synthetic_cleaned:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/depression_synthetic.csv
+  versioned: True
