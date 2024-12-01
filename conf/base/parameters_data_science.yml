@@ -16,7 +16,7 @@ model_options:
     - Sleep Duration
     - Dietary Habits
     - Degree
-    - Have you ever had suicidal thoughts ?
+    - suicidal_thoughts
     - Work/Study Hours
     - Financial Stress
     - Family History of Mental Illness

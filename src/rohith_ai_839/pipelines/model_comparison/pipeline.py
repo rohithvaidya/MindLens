@@ -1,8 +1,6 @@
 from kedro.pipeline import Pipeline, node, pipeline
 
-from .nodes import (
-   compare_trained_models
-)
+from .nodes import compare_trained_models
 
 
 def create_pipeline(**kwargs) -> Pipeline:
