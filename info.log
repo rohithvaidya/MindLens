@@ -21796,3 +21796,25 @@ Please also refer to the documentation for alternative solver options:
 2024-12-01 15:05:47,892 - kedro.pipeline.node - INFO - Running node: report_plotly: report_plotly([data_drift;pred_drift]) -> None
 2024-12-01 15:05:51,574 - kedro.runner.sequential_runner - INFO - Completed 8 out of 8 tasks
 2024-12-01 15:05:51,577 - kedro.runner.sequential_runner - INFO - Pipeline execution completed successfully.
+2024-12-01 15:23:48,330 - kedro.framework.project - INFO - Using 'conf\logging.yml' as logging configuration. You can change this by setting the KEDRO_LOGGING_CONFIG environment variable accordingly.
+2024-12-01 15:23:54,636 - kedro.framework.session.session - INFO - Kedro project MindLens
+2024-12-01 15:23:54,709 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Registering new custom resolver: 'km.random_name'
+2024-12-01 15:23:54,726 - kedro_mlflow.config.kedro_mlflow_config - INFO - The 'tracking_uri' key in mlflow.yml is relative ('server.mlflow_(tracking|registry)_uri = mlruns'). It is converted to a valid uri: 'file:///E:/Lab%20Files/Repos/MindLens/mlruns'
+2024-12-01 15:24:00,328 - kedro_telemetry.plugin - INFO - Kedro is sending anonymous usage data with the sole purpose of improving the product. No personal data or IP addresses are stored on our side. If you want to opt out, set the `KEDRO_DISABLE_TELEMETRY` or `DO_NOT_TRACK` environment variables, or create a `.telemetry` file in the current working directory with the contents `consent: false`. Read more at https://docs.kedro.org/en/stable/configuration/telemetry.html
+2024-12-01 15:24:01,578 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Mlflow run '83042f71ae144e69b08cbe70341b1164' has started
+2024-12-01 15:24:01,586 - kedro.runner.sequential_runner - INFO - Using synchronous mode for loading and saving data. Use the --async flag for potential performance gains. https://docs.kedro.org/en/stable/nodes_and_pipelines/run_a_pipeline.html#load-and-save-asynchronously
+2024-12-01 15:24:01,589 - kedro.io.data_catalog - INFO - Loading data from sklearn_model (MlflowMlflowModelLocalFileSystemDataset)...
+2024-12-01 15:24:01,599 - kedro.pipeline.node - INFO - Running node: compare_trained_models: compare_trained_models([sklearn_model]) -> None
+2024-12-01 15:24:01,603 - kedro.runner.sequential_runner - INFO - Completed 1 out of 1 tasks
+2024-12-01 15:24:01,605 - kedro.runner.sequential_runner - INFO - Pipeline execution completed successfully.
+2024-12-01 15:24:30,195 - kedro.framework.project - INFO - Using 'conf\logging.yml' as logging configuration. You can change this by setting the KEDRO_LOGGING_CONFIG environment variable accordingly.
+2024-12-01 15:24:34,223 - kedro.framework.session.session - INFO - Kedro project MindLens
+2024-12-01 15:24:34,273 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Registering new custom resolver: 'km.random_name'
+2024-12-01 15:24:34,289 - kedro_mlflow.config.kedro_mlflow_config - INFO - The 'tracking_uri' key in mlflow.yml is relative ('server.mlflow_(tracking|registry)_uri = mlruns'). It is converted to a valid uri: 'file:///E:/Lab%20Files/Repos/MindLens/mlruns'
+2024-12-01 15:24:37,812 - kedro_telemetry.plugin - INFO - Kedro is sending anonymous usage data with the sole purpose of improving the product. No personal data or IP addresses are stored on our side. If you want to opt out, set the `KEDRO_DISABLE_TELEMETRY` or `DO_NOT_TRACK` environment variables, or create a `.telemetry` file in the current working directory with the contents `consent: false`. Read more at https://docs.kedro.org/en/stable/configuration/telemetry.html
+2024-12-01 15:24:38,975 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Mlflow run '7933885f1667498bbbcaf513029ad65c' has started
+2024-12-01 15:24:38,983 - kedro.runner.sequential_runner - INFO - Using synchronous mode for loading and saving data. Use the --async flag for potential performance gains. https://docs.kedro.org/en/stable/nodes_and_pipelines/run_a_pipeline.html#load-and-save-asynchronously
+2024-12-01 15:24:38,988 - kedro.io.data_catalog - INFO - Loading data from sklearn_model (MlflowMlflowModelLocalFileSystemDataset)...
+2024-12-01 15:24:38,996 - kedro.pipeline.node - INFO - Running node: compare_trained_models: compare_trained_models([sklearn_model]) -> None
+2024-12-01 15:24:39,001 - kedro.runner.sequential_runner - INFO - Completed 1 out of 1 tasks
+2024-12-01 15:24:39,003 - kedro.runner.sequential_runner - INFO - Pipeline execution completed successfully.
