@@ -58,4 +58,12 @@ def preprocess_dataset(dataset: pd.DataFrame) -> pd.DataFrame:
 
     dataset = dataset.fillna(0)
 
+    object_cols = [col for col in dataset.columns if dataset[col].dtype == "object"]
+    le = LabelEncoder()
+
+    # Apply LabelEncoder to each categorical column and replace it in the DataFrame
+    for col in object_cols:
+        dataset[col] = le.fit_transform(dataset[col])
+        
+
     return dataset

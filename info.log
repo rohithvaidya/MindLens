@@ -19955,3 +19955,546 @@ Prediction Variable Drift Detected. Pipeline Failure
 You can resume the pipeline run from the nearest nodes with persisted inputs by adding the following argument to your previous command:
   --from-nodes "evaluate_model_node"
 2024-10-27 21:20:43,581 - kedro.framework.cli.cli - ERROR - An error has occurred: Prediction Variable Drift Detected. Pipeline Failure
+2024-12-01 14:09:12,265 - kedro.framework.project - INFO - Using 'conf\logging.yml' as logging configuration. You can change this by setting the KEDRO_LOGGING_CONFIG environment variable accordingly.
+2024-12-01 14:09:29,871 - kedro.framework.session.session - INFO - Kedro project MindLens
+2024-12-01 14:09:29,954 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Registering new custom resolver: 'km.random_name'
+2024-12-01 14:09:30,000 - kedro_mlflow.config.kedro_mlflow_config - INFO - The 'tracking_uri' key in mlflow.yml is relative ('server.mlflow_(tracking|registry)_uri = mlruns'). It is converted to a valid uri: 'file:///E:/Lab%20Files/Repos/MindLens/mlruns'
+2024-12-01 14:09:50,950 - kedro_telemetry.plugin - INFO - Kedro is sending anonymous usage data with the sole purpose of improving the product. No personal data or IP addresses are stored on our side. If you want to opt out, set the `KEDRO_DISABLE_TELEMETRY` or `DO_NOT_TRACK` environment variables, or create a `.telemetry` file in the current working directory with the contents `consent: false`. Read more at https://docs.kedro.org/en/stable/configuration/telemetry.html
+2024-12-01 14:09:52,531 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Mlflow run '5dc71b925bfb40d5b1c6f753be6e1bf8' has started
+2024-12-01 14:09:52,551 - kedro.runner.sequential_runner - INFO - Using synchronous mode for loading and saving data. Use the --async flag for potential performance gains. https://docs.kedro.org/en/stable/nodes_and_pipelines/run_a_pipeline.html#load-and-save-asynchronously
+2024-12-01 14:09:52,558 - kedro.io.data_catalog - INFO - Loading data from dataset (CSVDataset)...
+2024-12-01 14:09:53,291 - kedro.pipeline.node - INFO - Running node: preprocess_dataset_node: preprocess_dataset([dataset]) -> [model_input_dataset]
+2024-12-01 14:09:53,348 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,380 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,413 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,447 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,479 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,509 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,542 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,576 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,607 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,638 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,671 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,707 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,739 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,768 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,802 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,836 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,871 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,905 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,935 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:53,968 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:54,001 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:54,047 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:54,078 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:54,111 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:54,145 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:54,178 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:54,212 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:54,249 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:54,282 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:54,316 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:54,347 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:54,418 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:54,829 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:54,889 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:55,149 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:55,291 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:55,480 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:55,705 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:55,784 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:55,912 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:55,978 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:56,311 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:56,799 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:56,858 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:56,933 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:57,305 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:58,356 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:09:59,045 - kedro.io.data_catalog - INFO - Saving data to model_input_dataset (CSVDataset)...
+2024-12-01 14:10:00,730 - kedro.runner.sequential_runner - INFO - Completed 1 out of 8 tasks
+2024-12-01 14:10:00,735 - kedro.io.data_catalog - INFO - Loading data from model_input_dataset (CSVDataset)...
+2024-12-01 14:10:01,161 - kedro.io.data_catalog - INFO - Loading data from params:model_options (MemoryDataset)...
+2024-12-01 14:10:01,216 - kedro.pipeline.node - INFO - Running node: split_data_node: split_data([model_input_dataset;params:model_options]) -> [X_train;X_test;y_train;y_test]
+2024-12-01 14:10:01,224 - kedro.pipeline.node - ERROR - Node split_data_node: split_data([model_input_dataset;params:model_options]) -> [X_train;X_test;y_train;y_test] failed with error: 
+"None of [Index(['checking_status', 'duration', 'credit_amount', 'savings_status',\n       'employment', 'installment_commitment', 'residence_since', 'age',\n       'existing_credits', 'num_dependents', 'own_telephone', 'foreign_worker',\n       'health_status', 'X_1', 'X_2', 'X_3', 'X_4', 'X_5', 'X_6', 'X_7', 'X_8',\n       'X_9', 'X_10', 'purpose_domestic appliance', 'purpose_education',\n       'purpose_furniture/equipment', 'purpose_new car', 'purpose_other',\n       'purpose_radio/tv', 'purpose_repairs', 'purpose_used car',\n       'credit_history_critical/other existing credit',\n       'credit_history_delayed previously', 'credit_history_existing paid',\n       'credit_history_no credits/all paid', 'personal_status_male div/sep',\n       'personal_status_male mar/wid', 'personal_status_male single',\n       'housing_own', 'housing_rent', 'job_skilled',\n       'job_unemp/unskilled non res', 'job_unskilled resident',\n       'other_payment_plans_none', 'other_payment_plans_stores',\n       'property_magnitude_life insurance',\n       'property_magnitude_no known property',\n       'property_magnitude_real estate', 'other_parties_guarantor',\n       'other_parties_none'],\n      dtype='object')] are in the [columns]"
+2024-12-01 14:10:01,305 - kedro.runner.sequential_runner - WARNING - There are 7 nodes that have not run.
+You can resume the pipeline run from the nearest nodes with persisted inputs by adding the following argument to your previous command:
+  --from-nodes "split_data_node"
+2024-12-01 14:10:01,493 - kedro.framework.cli.cli - ERROR - An error has occurred: "None of [Index(['checking_status', 'duration', 'credit_amount', 'savings_status',\n       'employment', 'installment_commitment', 'residence_since', 'age',\n       'existing_credits', 'num_dependents', 'own_telephone', 'foreign_worker',\n       'health_status', 'X_1', 'X_2', 'X_3', 'X_4', 'X_5', 'X_6', 'X_7', 'X_8',\n       'X_9', 'X_10', 'purpose_domestic appliance', 'purpose_education',\n       'purpose_furniture/equipment', 'purpose_new car', 'purpose_other',\n       'purpose_radio/tv', 'purpose_repairs', 'purpose_used car',\n       'credit_history_critical/other existing credit',\n       'credit_history_delayed previously', 'credit_history_existing paid',\n       'credit_history_no credits/all paid', 'personal_status_male div/sep',\n       'personal_status_male mar/wid', 'personal_status_male single',\n       'housing_own', 'housing_rent', 'job_skilled',\n       'job_unemp/unskilled non res', 'job_unskilled resident',\n       'other_payment_plans_none', 'other_payment_plans_stores',\n       'property_magnitude_life insurance',\n       'property_magnitude_no known property',\n       'property_magnitude_real estate', 'other_parties_guarantor',\n       'other_parties_none'],\n      dtype='object')] are in the [columns]"
+2024-12-01 14:36:01,821 - kedro.framework.project - INFO - Using 'conf\logging.yml' as logging configuration. You can change this by setting the KEDRO_LOGGING_CONFIG environment variable accordingly.
+2024-12-01 14:36:06,942 - kedro.framework.session.session - INFO - Kedro project MindLens
+2024-12-01 14:36:06,994 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Registering new custom resolver: 'km.random_name'
+2024-12-01 14:36:07,013 - kedro_mlflow.config.kedro_mlflow_config - INFO - The 'tracking_uri' key in mlflow.yml is relative ('server.mlflow_(tracking|registry)_uri = mlruns'). It is converted to a valid uri: 'file:///E:/Lab%20Files/Repos/MindLens/mlruns'
+2024-12-01 14:36:12,260 - kedro_telemetry.plugin - INFO - Kedro is sending anonymous usage data with the sole purpose of improving the product. No personal data or IP addresses are stored on our side. If you want to opt out, set the `KEDRO_DISABLE_TELEMETRY` or `DO_NOT_TRACK` environment variables, or create a `.telemetry` file in the current working directory with the contents `consent: false`. Read more at https://docs.kedro.org/en/stable/configuration/telemetry.html
+2024-12-01 14:36:13,412 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Mlflow run 'ba39a203333a451f8c508de99959e953' has started
+2024-12-01 14:36:13,421 - kedro.runner.sequential_runner - INFO - Using synchronous mode for loading and saving data. Use the --async flag for potential performance gains. https://docs.kedro.org/en/stable/nodes_and_pipelines/run_a_pipeline.html#load-and-save-asynchronously
+2024-12-01 14:36:13,425 - kedro.io.data_catalog - INFO - Loading data from dataset (CSVDataset)...
+2024-12-01 14:36:13,826 - kedro.pipeline.node - INFO - Running node: preprocess_dataset_node: preprocess_dataset([dataset]) -> [model_input_dataset]
+2024-12-01 14:36:13,864 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:13,882 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:13,900 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:13,917 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:13,968 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:13,989 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,012 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,029 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,047 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,064 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,083 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,104 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,129 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,145 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,164 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,178 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,193 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,210 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,226 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,244 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,262 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,278 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,295 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,312 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,330 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,346 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,363 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,379 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,394 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,409 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,422 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,460 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,705 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,747 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,893 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:14,969 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:15,079 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:15,222 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:15,263 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:15,338 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:15,380 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:15,560 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:15,838 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:15,878 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:15,918 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:16,161 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:16,768 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:17,090 - kedro.pipeline.node - ERROR - Node preprocess_dataset_node: preprocess_dataset([dataset]) -> [model_input_dataset] failed with error: 
+name 'df' is not defined
+2024-12-01 14:36:17,119 - kedro.runner.sequential_runner - WARNING - No nodes ran. Repeat the previous command to attempt a new run.
+2024-12-01 14:36:17,130 - kedro.framework.cli.cli - ERROR - An error has occurred: name 'df' is not defined
+2024-12-01 14:36:48,358 - kedro.framework.project - INFO - Using 'conf\logging.yml' as logging configuration. You can change this by setting the KEDRO_LOGGING_CONFIG environment variable accordingly.
+2024-12-01 14:36:52,647 - kedro.framework.session.session - INFO - Kedro project MindLens
+2024-12-01 14:36:52,694 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Registering new custom resolver: 'km.random_name'
+2024-12-01 14:36:52,710 - kedro_mlflow.config.kedro_mlflow_config - INFO - The 'tracking_uri' key in mlflow.yml is relative ('server.mlflow_(tracking|registry)_uri = mlruns'). It is converted to a valid uri: 'file:///E:/Lab%20Files/Repos/MindLens/mlruns'
+2024-12-01 14:36:57,568 - kedro_telemetry.plugin - INFO - Kedro is sending anonymous usage data with the sole purpose of improving the product. No personal data or IP addresses are stored on our side. If you want to opt out, set the `KEDRO_DISABLE_TELEMETRY` or `DO_NOT_TRACK` environment variables, or create a `.telemetry` file in the current working directory with the contents `consent: false`. Read more at https://docs.kedro.org/en/stable/configuration/telemetry.html
+2024-12-01 14:36:58,568 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Mlflow run '2bfb5ce0f1f9492bb309cb7dab5b1bd7' has started
+2024-12-01 14:36:58,579 - kedro.runner.sequential_runner - INFO - Using synchronous mode for loading and saving data. Use the --async flag for potential performance gains. https://docs.kedro.org/en/stable/nodes_and_pipelines/run_a_pipeline.html#load-and-save-asynchronously
+2024-12-01 14:36:58,582 - kedro.io.data_catalog - INFO - Loading data from dataset (CSVDataset)...
+2024-12-01 14:36:58,960 - kedro.pipeline.node - INFO - Running node: preprocess_dataset_node: preprocess_dataset([dataset]) -> [model_input_dataset]
+2024-12-01 14:36:59,005 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,033 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,054 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,073 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,093 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,111 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,128 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,144 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,161 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,182 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,200 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,262 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,294 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,311 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,332 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,348 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,371 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,387 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,404 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,420 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,438 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,455 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,472 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,491 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,511 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,528 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,546 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,563 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,580 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,595 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,611 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,646 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,894 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:36:59,936 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:37:00,093 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:37:00,179 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:37:00,290 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:37:00,442 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:37:00,480 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:37:00,555 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:37:00,594 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:37:00,775 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:37:01,057 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:37:01,097 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:37:01,138 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:37:01,390 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:37:02,030 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:42: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset['City']==city][dataset['Depression'] == 1.0].count()[0]
+
+2024-12-01 14:37:02,655 - kedro.io.data_catalog - INFO - Saving data to model_input_dataset (CSVDataset)...
+2024-12-01 14:37:03,571 - kedro.runner.sequential_runner - INFO - Completed 1 out of 8 tasks
+2024-12-01 14:37:03,574 - kedro.io.data_catalog - INFO - Loading data from model_input_dataset (CSVDataset)...
+2024-12-01 14:37:03,802 - kedro.io.data_catalog - INFO - Loading data from params:model_options (MemoryDataset)...
+2024-12-01 14:37:03,830 - kedro.pipeline.node - INFO - Running node: split_data_node: split_data([model_input_dataset;params:model_options]) -> [X_train;X_test;y_train;y_test]
+2024-12-01 14:37:03,958 - kedro.io.data_catalog - INFO - Saving data to X_train (MemoryDataset)...
+2024-12-01 14:37:04,010 - kedro.io.data_catalog - INFO - Saving data to X_test (CSVDataset)...
+2024-12-01 14:37:04,233 - kedro.io.data_catalog - INFO - Saving data to y_train (MemoryDataset)...
+2024-12-01 14:37:04,237 - kedro.io.data_catalog - INFO - Saving data to y_test (CSVDataset)...
+2024-12-01 14:37:04,284 - kedro.runner.sequential_runner - INFO - Completed 2 out of 8 tasks
+2024-12-01 14:37:04,286 - kedro.io.data_catalog - INFO - Loading data from X_train (MemoryDataset)...
+2024-12-01 14:37:04,332 - kedro.io.data_catalog - INFO - Loading data from X_test (CSVDataset)...
+2024-12-01 14:37:04,504 - kedro.pipeline.node - INFO - Running node: data_quality_check: quality_drift_check([X_train;X_test]) -> [data_drift]
+2024-12-01 14:37:04,757 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2853: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+
+2024-12-01 14:37:04,761 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2854: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+
+2024-12-01 14:37:04,797 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2853: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+
+2024-12-01 14:37:04,803 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2854: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+
+2024-12-01 14:37:05,739 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2853: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+
+2024-12-01 14:37:05,742 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2854: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+
+2024-12-01 14:37:05,773 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2853: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+
+2024-12-01 14:37:05,776 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2854: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+
+2024-12-01 14:37:08,862 - kedro.io.data_catalog - INFO - Saving data to data_drift (JSONDataset)...
+2024-12-01 14:37:08,874 - kedro.runner.sequential_runner - INFO - Completed 3 out of 8 tasks
+2024-12-01 14:37:08,876 - kedro.io.data_catalog - INFO - Loading data from X_train (MemoryDataset)...
+2024-12-01 14:37:08,906 - kedro.io.data_catalog - INFO - Loading data from y_train (MemoryDataset)...
+2024-12-01 14:37:08,937 - kedro.pipeline.node - INFO - Running node: train_model_node: train_model([X_train;y_train]) -> [regressor;sklearn_model]
+2024-12-01 14:37:09,849 - py.warnings - WARNING - C:\Python310\lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning:
+
+lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+
+
+2024-12-01 14:37:09,888 - kedro.io.data_catalog - INFO - Saving data to regressor (MlflowModelTrackingDataset)...
+2024-12-01 14:37:28,972 - kedro.io.data_catalog - INFO - Saving data to sklearn_model (MlflowMlflowModelLocalFileSystemDataset)...
+2024-12-01 14:37:32,477 - kedro.runner.sequential_runner - INFO - Completed 4 out of 8 tasks
+2024-12-01 14:37:32,480 - kedro.io.data_catalog - INFO - Loading data from sklearn_model (MlflowMlflowModelLocalFileSystemDataset)...
+2024-12-01 14:37:32,487 - kedro.pipeline.node - INFO - Running node: compare_trained_models: compare_trained_models([sklearn_model]) -> None
+2024-12-01 14:37:32,527 - kedro.runner.sequential_runner - INFO - Completed 5 out of 8 tasks
+2024-12-01 14:37:32,530 - kedro.io.data_catalog - INFO - Loading data from sklearn_model (MlflowMlflowModelLocalFileSystemDataset)...
+2024-12-01 14:37:32,535 - kedro.io.data_catalog - INFO - Loading data from X_test (CSVDataset)...
+2024-12-01 14:37:32,603 - kedro.io.data_catalog - INFO - Loading data from y_test (CSVDataset)...
+2024-12-01 14:37:32,659 - kedro.pipeline.node - INFO - Running node: evaluate_model_node: evaluate_model([sklearn_model;X_test;y_test]) -> [y_pred;metrics]
+2024-12-01 14:37:32,706 - rohith_ai_839.pipelines.data_science.nodes - INFO - Model has accuracy of 0.934 on test data.
+2024-12-01 14:37:32,709 - rohith_ai_839.pipelines.data_science.nodes - INFO - Model has precision of 0.839 on test data.
+2024-12-01 14:37:32,712 - rohith_ai_839.pipelines.data_science.nodes - INFO - Model has recall of 0.793 on test data.
+2024-12-01 14:37:32,746 - kedro.io.data_catalog - INFO - Saving data to y_pred (MemoryDataset)...
+2024-12-01 14:37:32,748 - kedro.io.data_catalog - INFO - Saving data to metrics (MetricsDataset)...
+2024-12-01 14:37:32,754 - kedro.runner.sequential_runner - INFO - Completed 6 out of 8 tasks
+2024-12-01 14:37:32,758 - kedro.io.data_catalog - INFO - Loading data from y_test (CSVDataset)...
+2024-12-01 14:37:32,769 - kedro.io.data_catalog - INFO - Loading data from y_pred (MemoryDataset)...
+2024-12-01 14:37:32,778 - kedro.pipeline.node - INFO - Running node: pred_drift_check: prediction_drift_check([y_test;y_pred]) -> [pred_drift]
+2024-12-01 14:37:32,792 - kedro.pipeline.node - ERROR - Node pred_drift_check: prediction_drift_check([y_test;y_pred]) -> [pred_drift] failed with error: 
+"None of [Index(['Depression'], dtype='object')] are in the [index]"
+2024-12-01 14:37:32,803 - kedro.runner.sequential_runner - WARNING - There are 2 nodes that have not run.
+You can resume the pipeline run from the nearest nodes with persisted inputs by adding the following argument to your previous command:
+  --from-nodes "evaluate_model_node"
+2024-12-01 14:37:32,962 - kedro.framework.cli.cli - ERROR - An error has occurred: "None of [Index(['Depression'], dtype='object')] are in the [index]"

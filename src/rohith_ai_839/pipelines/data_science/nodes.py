@@ -25,7 +25,7 @@ def split_data(data: pd.DataFrame, parameters: Dict) -> Tuple:
         Split data.
     """
     X = data[parameters["features"]]
-    y = data["y"]
+    y = data["Depression"]
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=parameters["test_size"], random_state=parameters["random_state"]
     )
