@@ -63,7 +63,7 @@ dummy_confusion_matrix:
 
 dataset:
   type: pandas.CSVDataset
-  filepath: "data/01_raw/dataset_id_T01_V3_106.csv"
+  filepath: "data/01_raw/depression_synthetic.csv"
   load_args:
     sep: ","
   save_args:
