@@ -24179,3 +24179,609 @@ Please also refer to the documentation for alternative solver options:
 2024-12-01 21:07:49,793 - kedro.pipeline.node - INFO - Running node: report_plotly: report_plotly([data_drift;pred_drift]) -> None
 2024-12-01 21:07:52,785 - kedro.runner.sequential_runner - INFO - Completed 11 out of 11 tasks
 2024-12-01 21:07:52,787 - kedro.runner.sequential_runner - INFO - Pipeline execution completed successfully.
+2024-12-01 22:02:00,357 - kedro.framework.project - INFO - Using 'conf\logging.yml' as logging configuration. You can change this by setting the KEDRO_LOGGING_CONFIG environment variable accordingly.
+2024-12-01 22:02:12,509 - kedro.framework.session.session - INFO - Kedro project MindLens
+2024-12-01 22:02:12,592 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Registering new custom resolver: 'km.random_name'
+2024-12-01 22:02:12,620 - kedro_mlflow.config.kedro_mlflow_config - INFO - The 'tracking_uri' key in mlflow.yml is relative ('server.mlflow_(tracking|registry)_uri = mlruns'). It is converted to a valid uri: 'file:///E:/Lab%20Files/Repos/MindLens/mlruns'
+2024-12-01 22:02:25,199 - kedro_telemetry.plugin - INFO - Kedro is sending anonymous usage data with the sole purpose of improving the product. No personal data or IP addresses are stored on our side. If you want to opt out, set the `KEDRO_DISABLE_TELEMETRY` or `DO_NOT_TRACK` environment variables, or create a `.telemetry` file in the current working directory with the contents `consent: false`. Read more at https://docs.kedro.org/en/stable/configuration/telemetry.html
+2024-12-01 22:02:26,560 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Mlflow run '6f5e33a1a87d49c4ad9f427e8d1bf298' has started
+2024-12-01 22:02:26,583 - kedro.framework.cli.cli - ERROR - An error has occurred: Pipeline input(s) {'X_train'} not found in the DataCatalog
+2024-12-01 22:04:53,323 - kedro.framework.project - INFO - Using 'conf\logging.yml' as logging configuration. You can change this by setting the KEDRO_LOGGING_CONFIG environment variable accordingly.
+2024-12-01 22:05:00,567 - kedro.framework.session.session - INFO - Kedro project MindLens
+2024-12-01 22:05:00,657 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Registering new custom resolver: 'km.random_name'
+2024-12-01 22:05:00,679 - kedro_mlflow.config.kedro_mlflow_config - INFO - The 'tracking_uri' key in mlflow.yml is relative ('server.mlflow_(tracking|registry)_uri = mlruns'). It is converted to a valid uri: 'file:///E:/Lab%20Files/Repos/MindLens/mlruns'
+2024-12-01 22:05:08,117 - kedro_telemetry.plugin - INFO - Kedro is sending anonymous usage data with the sole purpose of improving the product. No personal data or IP addresses are stored on our side. If you want to opt out, set the `KEDRO_DISABLE_TELEMETRY` or `DO_NOT_TRACK` environment variables, or create a `.telemetry` file in the current working directory with the contents `consent: false`. Read more at https://docs.kedro.org/en/stable/configuration/telemetry.html
+2024-12-01 22:05:09,532 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Mlflow run 'da67c312c1e94d2b9fb6e54ce45e8458' has started
+2024-12-01 22:05:09,548 - kedro.runner.sequential_runner - INFO - Using synchronous mode for loading and saving data. Use the --async flag for potential performance gains. https://docs.kedro.org/en/stable/nodes_and_pipelines/run_a_pipeline.html#load-and-save-asynchronously
+2024-12-01 22:05:09,555 - kedro.io.data_catalog - INFO - Loading data from dataset (CSVDataset)...
+2024-12-01 22:05:10,129 - kedro.pipeline.node - INFO - Running node: preprocess_dataset_node: preprocess_dataset([dataset]) -> [model_input_dataset]
+2024-12-01 22:05:10,178 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,205 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,229 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,255 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,285 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,309 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,337 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,367 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,396 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,425 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,460 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,496 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,528 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,557 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,588 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,620 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,651 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,683 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,712 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,741 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,774 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,805 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,840 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,872 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,906 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,937 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:10,968 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:11,007 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:11,039 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:11,072 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:11,101 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:11,168 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:11,527 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:11,588 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:11,823 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:11,966 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:12,151 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:12,354 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:12,411 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:12,525 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:12,584 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:12,886 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:13,349 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:13,485 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:13,560 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:13,971 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:14,878 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:05:15,853 - kedro.io.data_catalog - INFO - Saving data to model_input_dataset (CSVDataset)...
+2024-12-01 22:05:17,038 - kedro.runner.sequential_runner - INFO - Completed 1 out of 12 tasks
+2024-12-01 22:05:17,042 - kedro.io.data_catalog - INFO - Loading data from model_input_dataset (CSVDataset)...
+2024-12-01 22:05:17,391 - kedro.io.data_catalog - INFO - Loading data from params:model_options (MemoryDataset)...
+2024-12-01 22:05:17,444 - kedro.pipeline.node - INFO - Running node: split_data_node: split_data([model_input_dataset;params:model_options]) -> [X_train;X_test;y_train;y_test]
+2024-12-01 22:05:17,678 - kedro.io.data_catalog - INFO - Saving data to X_train (CSVDataset)...
+2024-12-01 22:05:18,761 - kedro.io.data_catalog - INFO - Saving data to X_test (CSVDataset)...
+2024-12-01 22:05:19,102 - kedro.io.data_catalog - INFO - Saving data to y_train (MemoryDataset)...
+2024-12-01 22:05:19,110 - kedro.io.data_catalog - INFO - Saving data to y_test (CSVDataset)...
+2024-12-01 22:05:19,188 - kedro.runner.sequential_runner - INFO - Completed 2 out of 12 tasks
+2024-12-01 22:05:19,193 - kedro.io.data_catalog - INFO - Loading data from X_train (CSVDataset)...
+2024-12-01 22:05:19,489 - kedro.io.data_catalog - INFO - Loading data from X_test (CSVDataset)...
+2024-12-01 22:05:19,701 - kedro.pipeline.node - INFO - Running node: data_quality_check: quality_drift_check([X_train;X_test]) -> [data_drift]
+2024-12-01 22:05:19,875 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2853: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+
+2024-12-01 22:05:19,880 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2854: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+
+2024-12-01 22:05:19,929 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2853: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+
+2024-12-01 22:05:19,935 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2854: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+
+2024-12-01 22:05:21,192 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2853: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+
+2024-12-01 22:05:21,198 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2854: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+
+2024-12-01 22:05:21,257 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2853: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+
+2024-12-01 22:05:21,263 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2854: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+
+2024-12-01 22:05:24,603 - kedro.io.data_catalog - INFO - Saving data to data_drift (JSONDataset)...
+2024-12-01 22:05:24,625 - kedro.runner.sequential_runner - INFO - Completed 3 out of 12 tasks
+2024-12-01 22:05:24,630 - kedro.io.data_catalog - INFO - Loading data from X_train (CSVDataset)...
+2024-12-01 22:05:24,869 - kedro.io.data_catalog - INFO - Loading data from y_train (MemoryDataset)...
+2024-12-01 22:05:24,922 - kedro.pipeline.node - INFO - Running node: train_model_node_decision_tree: train_decision_tree([X_train;y_train]) -> [regressor_decision_tree]
+2024-12-01 22:05:25,428 - kedro.io.data_catalog - INFO - Saving data to regressor_decision_tree (PickleDataset)...
+2024-12-01 22:05:25,440 - kedro.runner.sequential_runner - INFO - Completed 4 out of 12 tasks
+2024-12-01 22:05:25,445 - kedro.io.data_catalog - INFO - Loading data from X_train (CSVDataset)...
+2024-12-01 22:05:25,730 - kedro.io.data_catalog - INFO - Loading data from y_train (MemoryDataset)...
+2024-12-01 22:05:25,782 - kedro.pipeline.node - INFO - Running node: train_model_node_logistic_regression: train_logistic_regression([X_train;y_train]) -> [regressor_logistic_regression]
+2024-12-01 22:05:27,332 - py.warnings - WARNING - C:\Python310\lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning:
+
+lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+
+
+2024-12-01 22:05:27,439 - kedro.io.data_catalog - INFO - Saving data to regressor_logistic_regression (PickleDataset)...
+2024-12-01 22:05:27,475 - kedro.runner.sequential_runner - INFO - Completed 5 out of 12 tasks
+2024-12-01 22:05:27,483 - kedro.io.data_catalog - INFO - Loading data from X_train (CSVDataset)...
+2024-12-01 22:05:27,742 - kedro.io.data_catalog - INFO - Loading data from y_train (MemoryDataset)...
+2024-12-01 22:05:27,792 - kedro.pipeline.node - INFO - Running node: train_model_node_random_forest: train_random_forest([X_train;y_train]) -> [regressor_random_forest]
+2024-12-01 22:05:41,538 - kedro.io.data_catalog - INFO - Saving data to regressor_random_forest (PickleDataset)...
+2024-12-01 22:05:42,750 - kedro.runner.sequential_runner - INFO - Completed 6 out of 12 tasks
+2024-12-01 22:05:42,755 - kedro.io.data_catalog - INFO - Loading data from X_train (CSVDataset)...
+2024-12-01 22:05:43,099 - kedro.io.data_catalog - INFO - Loading data from y_train (MemoryDataset)...
+2024-12-01 22:05:43,151 - kedro.pipeline.node - INFO - Running node: train_model_node_xg_boost: train_xg_boost([X_train;y_train]) -> [regressor_xg_boost]
+2024-12-01 22:05:43,875 - kedro.io.data_catalog - INFO - Saving data to regressor_xg_boost (PickleDataset)...
+2024-12-01 22:05:43,889 - kedro.runner.sequential_runner - INFO - Completed 7 out of 12 tasks
+2024-12-01 22:05:43,891 - kedro.io.data_catalog - INFO - Loading data from regressor_logistic_regression (PickleDataset)...
+2024-12-01 22:05:43,898 - kedro.io.data_catalog - INFO - Loading data from regressor_decision_tree (PickleDataset)...
+2024-12-01 22:05:43,923 - kedro.io.data_catalog - INFO - Loading data from regressor_xg_boost (PickleDataset)...
+2024-12-01 22:05:43,954 - kedro.io.data_catalog - INFO - Loading data from regressor_random_forest (PickleDataset)...
+2024-12-01 22:05:44,122 - kedro.io.data_catalog - INFO - Loading data from X_test (CSVDataset)...
+2024-12-01 22:05:44,233 - kedro.io.data_catalog - INFO - Loading data from y_test (CSVDataset)...
+2024-12-01 22:05:44,324 - kedro.pipeline.node - INFO - Running node: evaluate_all_models: evaluate_all_models([regressor_logistic_regression;regressor_decision_tree;regressor_xg_boost;regressor_random_forest;X_test;y_test]) -> [y_pred;metrics;sklearn_model]
+2024-12-01 22:05:44,424 - rohith_ai_839.pipelines.data_science.nodes - INFO - Logistic Regression Model has accuracy of 0.934 on test data.
+2024-12-01 22:05:44,429 - rohith_ai_839.pipelines.data_science.nodes - INFO - Logistic Regression Model has precision of 0.839 on test data.
+2024-12-01 22:05:44,435 - rohith_ai_839.pipelines.data_science.nodes - INFO - Logistic Regression Model has recall of 0.793 on test data.
+2024-12-01 22:05:44,439 - rohith_ai_839.pipelines.data_science.nodes - INFO - Logistic Regression Model has f1_Score of 0.815 on test data.
+2024-12-01 22:05:44,545 - rohith_ai_839.pipelines.data_science.nodes - INFO - Random Forest Model has accuracy of 0.929 on test data.
+2024-12-01 22:05:44,548 - rohith_ai_839.pipelines.data_science.nodes - INFO - Random Forest Model has precision of 0.827 on test data.
+2024-12-01 22:05:44,553 - rohith_ai_839.pipelines.data_science.nodes - INFO - Random Forest Model has recall of 0.772 on test data.
+2024-12-01 22:05:44,556 - rohith_ai_839.pipelines.data_science.nodes - INFO - Random Forest Model has f1_Score of 0.799 on test data.
+2024-12-01 22:05:44,726 - rohith_ai_839.pipelines.data_science.nodes - INFO - XG Boost Model has accuracy of 0.935 on test data.
+2024-12-01 22:05:44,730 - rohith_ai_839.pipelines.data_science.nodes - INFO - XG Boost Model has precision of 0.838 on test data.
+2024-12-01 22:05:44,735 - rohith_ai_839.pipelines.data_science.nodes - INFO - XG Boost Model has recall of 0.798 on test data.
+2024-12-01 22:05:44,739 - rohith_ai_839.pipelines.data_science.nodes - INFO - XG Boost Model has f1_Score of 0.817 on test data.
+2024-12-01 22:05:45,431 - rohith_ai_839.pipelines.data_science.nodes - INFO - Decision Tree Model has accuracy of 0.934 on test data.
+2024-12-01 22:05:45,434 - rohith_ai_839.pipelines.data_science.nodes - INFO - Decision Tree Model has precision of 0.842 on test data.
+2024-12-01 22:05:45,436 - rohith_ai_839.pipelines.data_science.nodes - INFO - Decision Tree Model has recall of 0.785 on test data.
+2024-12-01 22:05:45,439 - rohith_ai_839.pipelines.data_science.nodes - INFO - Decision Tree Model has f1_Score of 0.812 on test data.
+2024-12-01 22:05:45,443 - rohith_ai_839.pipelines.data_science.nodes - INFO - Selected Model Algorithm: xg_boost
+2024-12-01 22:05:45,501 - kedro.io.data_catalog - INFO - Saving data to y_pred (MemoryDataset)...
+2024-12-01 22:05:45,506 - kedro.io.data_catalog - INFO - Saving data to metrics (MetricsDataset)...
+2024-12-01 22:05:45,516 - kedro.io.data_catalog - INFO - Saving data to sklearn_model (MlflowMlflowModelLocalFileSystemDataset)...
+2024-12-01 22:06:02,906 - kedro.runner.sequential_runner - INFO - Completed 8 out of 12 tasks
+2024-12-01 22:06:02,911 - kedro.io.data_catalog - INFO - Loading data from X_train (CSVDataset)...
+2024-12-01 22:06:03,194 - kedro.io.data_catalog - INFO - Loading data from sklearn_model (MlflowMlflowModelLocalFileSystemDataset)...
+2024-12-01 22:06:03,245 - kedro.pipeline.node - INFO - Running node: aggregate_shap: aggregate_shap_explanations([X_train;sklearn_model]) -> None
+2024-12-01 22:16:55,058 - kedro.pipeline.node - ERROR - Node aggregate_shap: aggregate_shap_explanations([X_train;sklearn_model]) -> None failed with error: 
+[Errno 2] No such file or directory: 'data/08_reporting/shap_dependency_scatter_Work/Study Hours.png'
+2024-12-01 22:16:55,098 - kedro.runner.sequential_runner - WARNING - There are 4 nodes that have not run.
+You can resume the pipeline run from the nearest nodes with persisted inputs by adding the following argument to your previous command:
+  --from-nodes "evaluate_all_models"
+2024-12-01 22:16:55,365 - kedro.framework.cli.cli - ERROR - An error has occurred: [Errno 2] No such file or directory: 'data/08_reporting/shap_dependency_scatter_Work/Study Hours.png'
+2024-12-01 22:21:14,940 - kedro.framework.project - INFO - Using 'conf\logging.yml' as logging configuration. You can change this by setting the KEDRO_LOGGING_CONFIG environment variable accordingly.
+2024-12-01 22:21:26,309 - kedro.framework.session.session - INFO - Kedro project MindLens
+2024-12-01 22:21:26,396 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Registering new custom resolver: 'km.random_name'
+2024-12-01 22:21:26,420 - kedro_mlflow.config.kedro_mlflow_config - INFO - The 'tracking_uri' key in mlflow.yml is relative ('server.mlflow_(tracking|registry)_uri = mlruns'). It is converted to a valid uri: 'file:///E:/Lab%20Files/Repos/MindLens/mlruns'
+2024-12-01 22:21:35,663 - py.warnings - WARNING - C:\Python310\lib\site-packages\kedro\framework\project\__init__.py:426: UserWarning: An error occurred while importing the 'rohith_ai_839.pipelines.model_comparison' module. Nothing defined therein will be returned by 'find_pipelines'.
+
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\kedro\framework\project\__init__.py", line 418, in find_pipelines
+    pipeline_module = importlib.import_module(pipeline_module_name)
+  File "C:\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\model_comparison\__init__.py", line 1, in <module>
+    from .pipeline import create_pipeline  # NOQA
+  File "E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\model_comparison\pipeline.py", line 3, in <module>
+    from .nodes import compare_trained_models, aggregate_shap_explanations
+  File "E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\model_comparison\nodes.py", line 50
+    scatter_plot_path = f"data/08_reporting/shap_dependency_scatter_{feature_name.split("/")[0]}.png"
+                                                                                         ^
+SyntaxError: f-string: unmatched '('
+
+  warnings.warn(
+
+2024-12-01 22:21:35,698 - kedro.framework.cli.cli - ERROR - An error has occurred: Failed to find the pipeline named 'model_comparison'. It needs to be generated and returned by the 'register_pipelines' function.
+2024-12-01 22:21:35,704 - kedro_telemetry.plugin - INFO - Kedro is sending anonymous usage data with the sole purpose of improving the product. No personal data or IP addresses are stored on our side. If you want to opt out, set the `KEDRO_DISABLE_TELEMETRY` or `DO_NOT_TRACK` environment variables, or create a `.telemetry` file in the current working directory with the contents `consent: false`. Read more at https://docs.kedro.org/en/stable/configuration/telemetry.html
+2024-12-01 22:23:14,886 - kedro.framework.project - INFO - Using 'conf\logging.yml' as logging configuration. You can change this by setting the KEDRO_LOGGING_CONFIG environment variable accordingly.
+2024-12-01 22:23:22,146 - kedro.framework.session.session - INFO - Kedro project MindLens
+2024-12-01 22:23:22,233 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Registering new custom resolver: 'km.random_name'
+2024-12-01 22:23:22,255 - kedro_mlflow.config.kedro_mlflow_config - INFO - The 'tracking_uri' key in mlflow.yml is relative ('server.mlflow_(tracking|registry)_uri = mlruns'). It is converted to a valid uri: 'file:///E:/Lab%20Files/Repos/MindLens/mlruns'
+2024-12-01 22:23:27,741 - py.warnings - WARNING - C:\Python310\lib\site-packages\kedro\framework\project\__init__.py:426: UserWarning: An error occurred while importing the 'rohith_ai_839.pipelines.model_comparison' module. Nothing defined therein will be returned by 'find_pipelines'.
+
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\kedro\framework\project\__init__.py", line 418, in find_pipelines
+    pipeline_module = importlib.import_module(pipeline_module_name)
+  File "C:\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\model_comparison\__init__.py", line 1, in <module>
+    from .pipeline import create_pipeline  # NOQA
+  File "E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\model_comparison\pipeline.py", line 3, in <module>
+    from .nodes import compare_trained_models, aggregate_shap_explanations
+  File "E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\model_comparison\nodes.py", line 50
+    scatter_plot_path = f"data/08_reporting/shap_dependency_scatter_{feature_name.split("/")[0]}.png"
+                                                                                         ^
+SyntaxError: f-string: unmatched '('
+
+  warnings.warn(
+
+2024-12-01 22:23:27,770 - kedro.framework.cli.cli - ERROR - An error has occurred: Failed to find the pipeline named 'model_comparison'. It needs to be generated and returned by the 'register_pipelines' function.
+2024-12-01 22:23:27,776 - kedro_telemetry.plugin - INFO - Kedro is sending anonymous usage data with the sole purpose of improving the product. No personal data or IP addresses are stored on our side. If you want to opt out, set the `KEDRO_DISABLE_TELEMETRY` or `DO_NOT_TRACK` environment variables, or create a `.telemetry` file in the current working directory with the contents `consent: false`. Read more at https://docs.kedro.org/en/stable/configuration/telemetry.html
+2024-12-01 22:23:42,267 - kedro.framework.project - INFO - Using 'conf\logging.yml' as logging configuration. You can change this by setting the KEDRO_LOGGING_CONFIG environment variable accordingly.
+2024-12-01 22:23:50,710 - kedro.framework.session.session - INFO - Kedro project MindLens
+2024-12-01 22:23:50,822 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Registering new custom resolver: 'km.random_name'
+2024-12-01 22:23:50,851 - kedro_mlflow.config.kedro_mlflow_config - INFO - The 'tracking_uri' key in mlflow.yml is relative ('server.mlflow_(tracking|registry)_uri = mlruns'). It is converted to a valid uri: 'file:///E:/Lab%20Files/Repos/MindLens/mlruns'
+2024-12-01 22:23:56,938 - py.warnings - WARNING - C:\Python310\lib\site-packages\kedro\framework\project\__init__.py:426: UserWarning: An error occurred while importing the 'rohith_ai_839.pipelines.model_comparison' module. Nothing defined therein will be returned by 'find_pipelines'.
+
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\kedro\framework\project\__init__.py", line 418, in find_pipelines
+    pipeline_module = importlib.import_module(pipeline_module_name)
+  File "C:\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\model_comparison\__init__.py", line 1, in <module>
+    from .pipeline import create_pipeline  # NOQA
+  File "E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\model_comparison\pipeline.py", line 3, in <module>
+    from .nodes import compare_trained_models, aggregate_shap_explanations
+  File "E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\model_comparison\nodes.py", line 50
+    scatter_plot_path = f"data/08_reporting/shap_dependency_scatter_{feature_name.split("/")[0]}.png"
+                                                                                         ^
+SyntaxError: f-string: unmatched '('
+
+  warnings.warn(
+
+2024-12-01 22:23:58,162 - kedro_telemetry.plugin - INFO - Kedro is sending anonymous usage data with the sole purpose of improving the product. No personal data or IP addresses are stored on our side. If you want to opt out, set the `KEDRO_DISABLE_TELEMETRY` or `DO_NOT_TRACK` environment variables, or create a `.telemetry` file in the current working directory with the contents `consent: false`. Read more at https://docs.kedro.org/en/stable/configuration/telemetry.html
+2024-12-01 22:23:59,670 - kedro_mlflow.framework.hooks.mlflow_hook - INFO - Mlflow run '3d39f0b3df68448983b79c049fc6cc5a' has started
+2024-12-01 22:23:59,686 - kedro.runner.sequential_runner - INFO - Using synchronous mode for loading and saving data. Use the --async flag for potential performance gains. https://docs.kedro.org/en/stable/nodes_and_pipelines/run_a_pipeline.html#load-and-save-asynchronously
+2024-12-01 22:23:59,694 - kedro.io.data_catalog - INFO - Loading data from dataset (CSVDataset)...
+2024-12-01 22:24:00,326 - kedro.pipeline.node - INFO - Running node: preprocess_dataset_node: preprocess_dataset([dataset]) -> [model_input_dataset]
+2024-12-01 22:24:00,388 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,418 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,449 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,481 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,510 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,540 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,570 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,603 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,630 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,660 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,693 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,762 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,841 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,866 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,892 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,915 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,940 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,969 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:00,998 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:01,029 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:01,059 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:01,089 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:01,118 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:01,150 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:01,180 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:01,208 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:01,237 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:01,267 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:01,295 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:01,325 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:01,352 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:01,422 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:01,814 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:01,889 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:02,194 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:02,357 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:02,627 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:02,898 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:02,954 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:03,087 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:03,163 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:03,468 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:03,950 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:04,030 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:04,106 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:04,509 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:05,409 - py.warnings - WARNING - E:\Lab Files\Repos\MindLens\src\rohith_ai_839\pipelines\data_processing\nodes.py:22: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  num_depressed_people = dataset[dataset["City"] == city][
+
+2024-12-01 22:24:06,348 - kedro.io.data_catalog - INFO - Saving data to model_input_dataset (CSVDataset)...
+2024-12-01 22:24:07,618 - kedro.runner.sequential_runner - INFO - Completed 1 out of 10 tasks
+2024-12-01 22:24:07,621 - kedro.io.data_catalog - INFO - Loading data from model_input_dataset (CSVDataset)...
+2024-12-01 22:24:07,965 - kedro.io.data_catalog - INFO - Loading data from params:model_options (MemoryDataset)...
+2024-12-01 22:24:08,022 - kedro.pipeline.node - INFO - Running node: split_data_node: split_data([model_input_dataset;params:model_options]) -> [X_train;X_test;y_train;y_test]
+2024-12-01 22:24:08,218 - kedro.io.data_catalog - INFO - Saving data to X_train (CSVDataset)...
+2024-12-01 22:24:09,096 - kedro.io.data_catalog - INFO - Saving data to X_test (CSVDataset)...
+2024-12-01 22:24:09,432 - kedro.io.data_catalog - INFO - Saving data to y_train (MemoryDataset)...
+2024-12-01 22:24:09,438 - kedro.io.data_catalog - INFO - Saving data to y_test (CSVDataset)...
+2024-12-01 22:24:09,514 - kedro.runner.sequential_runner - INFO - Completed 2 out of 10 tasks
+2024-12-01 22:24:09,519 - kedro.io.data_catalog - INFO - Loading data from X_train (CSVDataset)...
+2024-12-01 22:24:09,761 - kedro.io.data_catalog - INFO - Loading data from X_test (CSVDataset)...
+2024-12-01 22:24:09,969 - kedro.pipeline.node - INFO - Running node: data_quality_check: quality_drift_check([X_train;X_test]) -> [data_drift]
+2024-12-01 22:24:10,145 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2853: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+
+2024-12-01 22:24:10,150 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2854: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+
+2024-12-01 22:24:10,198 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2853: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+
+2024-12-01 22:24:10,205 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2854: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+
+2024-12-01 22:24:11,333 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2853: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+
+2024-12-01 22:24:11,337 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2854: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+
+2024-12-01 22:24:11,383 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2853: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+
+2024-12-01 22:24:11,392 - py.warnings - WARNING - C:\Python310\lib\site-packages\numpy\lib\function_base.py:2854: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+
+2024-12-01 22:24:14,385 - kedro.io.data_catalog - INFO - Saving data to data_drift (JSONDataset)...
+2024-12-01 22:24:14,407 - kedro.runner.sequential_runner - INFO - Completed 3 out of 10 tasks
+2024-12-01 22:24:14,412 - kedro.io.data_catalog - INFO - Loading data from X_train (CSVDataset)...
+2024-12-01 22:24:14,645 - kedro.io.data_catalog - INFO - Loading data from y_train (MemoryDataset)...
+2024-12-01 22:24:14,682 - kedro.pipeline.node - INFO - Running node: train_model_node_decision_tree: train_decision_tree([X_train;y_train]) -> [regressor_decision_tree]
+2024-12-01 22:24:15,227 - kedro.io.data_catalog - INFO - Saving data to regressor_decision_tree (PickleDataset)...
+2024-12-01 22:24:15,240 - kedro.runner.sequential_runner - INFO - Completed 4 out of 10 tasks
+2024-12-01 22:24:15,245 - kedro.io.data_catalog - INFO - Loading data from X_train (CSVDataset)...
+2024-12-01 22:24:15,467 - kedro.io.data_catalog - INFO - Loading data from y_train (MemoryDataset)...
+2024-12-01 22:24:15,564 - kedro.pipeline.node - INFO - Running node: train_model_node_logistic_regression: train_logistic_regression([X_train;y_train]) -> [regressor_logistic_regression]
+2024-12-01 22:24:16,831 - py.warnings - WARNING - C:\Python310\lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning:
+
+lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+
+
+2024-12-01 22:24:16,888 - kedro.io.data_catalog - INFO - Saving data to regressor_logistic_regression (PickleDataset)...
+2024-12-01 22:24:16,901 - kedro.runner.sequential_runner - INFO - Completed 5 out of 10 tasks
+2024-12-01 22:24:16,906 - kedro.io.data_catalog - INFO - Loading data from X_train (CSVDataset)...
+2024-12-01 22:24:17,183 - kedro.io.data_catalog - INFO - Loading data from y_train (MemoryDataset)...
+2024-12-01 22:24:17,233 - kedro.pipeline.node - INFO - Running node: train_model_node_random_forest: train_random_forest([X_train;y_train]) -> [regressor_random_forest]
+2024-12-01 22:24:30,417 - kedro.io.data_catalog - INFO - Saving data to regressor_random_forest (PickleDataset)...
+2024-12-01 22:24:30,783 - kedro.runner.sequential_runner - INFO - Completed 6 out of 10 tasks
+2024-12-01 22:24:30,788 - kedro.io.data_catalog - INFO - Loading data from X_train (CSVDataset)...
+2024-12-01 22:24:31,058 - kedro.io.data_catalog - INFO - Loading data from y_train (MemoryDataset)...
+2024-12-01 22:24:31,119 - kedro.pipeline.node - INFO - Running node: train_model_node_xg_boost: train_xg_boost([X_train;y_train]) -> [regressor_xg_boost]
+2024-12-01 22:24:31,867 - kedro.io.data_catalog - INFO - Saving data to regressor_xg_boost (PickleDataset)...
+2024-12-01 22:24:31,880 - kedro.runner.sequential_runner - INFO - Completed 7 out of 10 tasks
+2024-12-01 22:24:31,883 - kedro.io.data_catalog - INFO - Loading data from regressor_logistic_regression (PickleDataset)...
+2024-12-01 22:24:31,889 - kedro.io.data_catalog - INFO - Loading data from regressor_decision_tree (PickleDataset)...
+2024-12-01 22:24:31,914 - kedro.io.data_catalog - INFO - Loading data from regressor_xg_boost (PickleDataset)...
+2024-12-01 22:24:31,939 - kedro.io.data_catalog - INFO - Loading data from regressor_random_forest (PickleDataset)...
+2024-12-01 22:24:32,117 - kedro.io.data_catalog - INFO - Loading data from X_test (CSVDataset)...
+2024-12-01 22:24:32,221 - kedro.io.data_catalog - INFO - Loading data from y_test (CSVDataset)...
+2024-12-01 22:24:32,316 - kedro.pipeline.node - INFO - Running node: evaluate_all_models: evaluate_all_models([regressor_logistic_regression;regressor_decision_tree;regressor_xg_boost;regressor_random_forest;X_test;y_test]) -> [y_pred;metrics;sklearn_model]
+2024-12-01 22:24:32,433 - rohith_ai_839.pipelines.data_science.nodes - INFO - Logistic Regression Model has accuracy of 0.934 on test data.
+2024-12-01 22:24:32,456 - rohith_ai_839.pipelines.data_science.nodes - INFO - Logistic Regression Model has precision of 0.839 on test data.
+2024-12-01 22:24:32,462 - rohith_ai_839.pipelines.data_science.nodes - INFO - Logistic Regression Model has recall of 0.793 on test data.
+2024-12-01 22:24:32,466 - rohith_ai_839.pipelines.data_science.nodes - INFO - Logistic Regression Model has f1_Score of 0.815 on test data.
+2024-12-01 22:24:32,581 - rohith_ai_839.pipelines.data_science.nodes - INFO - Random Forest Model has accuracy of 0.929 on test data.
+2024-12-01 22:24:32,584 - rohith_ai_839.pipelines.data_science.nodes - INFO - Random Forest Model has precision of 0.827 on test data.
+2024-12-01 22:24:32,589 - rohith_ai_839.pipelines.data_science.nodes - INFO - Random Forest Model has recall of 0.772 on test data.
+2024-12-01 22:24:32,592 - rohith_ai_839.pipelines.data_science.nodes - INFO - Random Forest Model has f1_Score of 0.799 on test data.
+2024-12-01 22:24:32,715 - rohith_ai_839.pipelines.data_science.nodes - INFO - XG Boost Model has accuracy of 0.935 on test data.
+2024-12-01 22:24:32,717 - rohith_ai_839.pipelines.data_science.nodes - INFO - XG Boost Model has precision of 0.838 on test data.
+2024-12-01 22:24:32,720 - rohith_ai_839.pipelines.data_science.nodes - INFO - XG Boost Model has recall of 0.798 on test data.
+2024-12-01 22:24:32,722 - rohith_ai_839.pipelines.data_science.nodes - INFO - XG Boost Model has f1_Score of 0.817 on test data.
+2024-12-01 22:24:33,344 - rohith_ai_839.pipelines.data_science.nodes - INFO - Decision Tree Model has accuracy of 0.934 on test data.
+2024-12-01 22:24:33,346 - rohith_ai_839.pipelines.data_science.nodes - INFO - Decision Tree Model has precision of 0.842 on test data.
+2024-12-01 22:24:33,348 - rohith_ai_839.pipelines.data_science.nodes - INFO - Decision Tree Model has recall of 0.785 on test data.
+2024-12-01 22:24:33,351 - rohith_ai_839.pipelines.data_science.nodes - INFO - Decision Tree Model has f1_Score of 0.812 on test data.
+2024-12-01 22:24:33,355 - rohith_ai_839.pipelines.data_science.nodes - INFO - Selected Model Algorithm: xg_boost
+2024-12-01 22:24:33,413 - kedro.io.data_catalog - INFO - Saving data to y_pred (MemoryDataset)...
+2024-12-01 22:24:33,418 - kedro.io.data_catalog - INFO - Saving data to metrics (MetricsDataset)...
+2024-12-01 22:24:33,430 - kedro.io.data_catalog - INFO - Saving data to sklearn_model (MlflowMlflowModelLocalFileSystemDataset)...
+2024-12-01 22:24:48,406 - kedro.runner.sequential_runner - INFO - Completed 8 out of 10 tasks
+2024-12-01 22:24:48,411 - kedro.io.data_catalog - INFO - Loading data from y_test (CSVDataset)...
+2024-12-01 22:24:48,436 - kedro.io.data_catalog - INFO - Loading data from y_pred (MemoryDataset)...
+2024-12-01 22:24:48,451 - kedro.pipeline.node - INFO - Running node: pred_drift_check: prediction_drift_check([y_test;y_pred]) -> [pred_drift]
+2024-12-01 22:24:48,747 - kedro.io.data_catalog - INFO - Saving data to pred_drift (JSONDataset)...
+2024-12-01 22:24:48,756 - kedro.runner.sequential_runner - INFO - Completed 9 out of 10 tasks
+2024-12-01 22:24:48,760 - kedro.io.data_catalog - INFO - Loading data from data_drift (JSONDataset)...
+2024-12-01 22:24:48,784 - kedro.io.data_catalog - INFO - Loading data from pred_drift (JSONDataset)...
+2024-12-01 22:24:48,807 - kedro.pipeline.node - INFO - Running node: report_plotly: report_plotly([data_drift;pred_drift]) -> None
+2024-12-01 22:24:54,901 - kedro.runner.sequential_runner - INFO - Completed 10 out of 10 tasks
+2024-12-01 22:24:54,905 - kedro.runner.sequential_runner - INFO - Pipeline execution completed successfully.

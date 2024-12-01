@@ -119,6 +119,15 @@ X_test:
     index: False
   versioned: True
 
+X_train:
+  type: pandas.CSVDataset
+  filepath: "data/05_model_input/X_train.csv"
+  load_args:
+    sep: ","
+  save_args:
+    index: False
+  versioned: True
+
 y_test:
   type: pandas.CSVDataset
   filepath: "data/05_model_input/y_test.csv"
