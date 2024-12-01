@@ -18,9 +18,9 @@ def compare_trained_models(sklearn_model):
         new_score = json.load(file)
     print(new_score, old_score)
 
-    if(new_score["score"] < old_score["score"]):
+    if(new_score["value_1"] < old_score["value_1"]):
         raise Exception("Model Accuracy has gone down compared to the previous version")
 
     return
 
-    
+   

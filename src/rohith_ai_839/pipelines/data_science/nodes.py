@@ -12,6 +12,11 @@ from evidently.tests import *
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 from sklearn.model_selection import train_test_split
+from sklearn import metrics
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+from xgboost import XGBClassifier
+from sklearn.metrics import f1_score
 
 
 def split_data(data: pd.DataFrame, parameters: Dict) -> Tuple:
@@ -31,7 +36,7 @@ def split_data(data: pd.DataFrame, parameters: Dict) -> Tuple:
     return X_train, X_test, y_train, y_test
 
 
-def train_model(X_train: pd.DataFrame, y_train: pd.Series) -> LogisticRegression:
+def train_logistic_regression(X_train: pd.DataFrame, y_train: pd.Series) -> LogisticRegression:
     """Trains the Logistic regression model.
 
     Args:
@@ -41,12 +46,61 @@ def train_model(X_train: pd.DataFrame, y_train: pd.Series) -> LogisticRegression
     Returns:
         Trained model.
     """
-    print(X_train)
     regressor = LogisticRegression(penalty="l2", C=0.01)
     regressor.fit(X_train, y_train)
     sklearn_model = regressor
 
-    return regressor, sklearn_model
+    return regressor
+
+def train_random_forest(X_train: pd.DataFrame, y_train: pd.Series):
+    """Trains the Random Forest model.
+
+    Args:
+        X_train: Training data of independent features.
+        y_train: Training data for target decision.
+
+    Returns:
+        Trained model.
+    """
+    regressor = RandomForestClassifier(random_state=42)
+    regressor.fit(X_train, y_train)
+    sklearn_model = regressor
+
+    return regressor
+
+def train_decision_tree(X_train: pd.DataFrame, y_train: pd.Series) -> DecisionTreeClassifier:
+    """Trains the Decision Tree model.
+
+    Args:
+        X_train: Training data of independent features.
+        y_train: Training data for target decision.
+
+    Returns:
+        Trained model.
+    """
+    
+    regressor = DecisionTreeClassifier(max_depth=10, random_state=42)
+    regressor.fit(X_train, y_train)
+    sklearn_model = regressor
+
+    return regressor
+
+def train_xg_boost(X_train: pd.DataFrame, y_train: pd.Series):
+    """Trains the Decision Tree model.
+
+    Args:
+        X_train: Training data of independent features.
+        y_train: Training data for target decision.
+
+    Returns:
+        Trained model.
+    """
+    
+    regressor = XGBClassifier(random_state=42)
+    regressor.fit(X_train, y_train)
+    sklearn_model = regressor
+
+    return regressor
 
 
 def quality_drift_check(
@@ -85,8 +139,8 @@ def quality_drift_check(
     return json.loads(report.json())
 
 
-def evaluate_model(
-    regressor: LogisticRegression, X_test: pd.DataFrame, y_test: pd.Series
+def evaluate_all_models(
+    regressor_logistic_regression, regressor_random_forest, regressor_xg_boost, regressor_decision_tree, X_test: pd.DataFrame, y_test: pd.Series
 ) -> pd.Series:
     """Calculates and logs the coefficient of determination.
 
@@ -95,18 +149,83 @@ def evaluate_model(
         X_test: Testing data of independent features.
         y_test: Testing data for target decision.
     """
-    y_pred = regressor.predict(X_test)
+    metrics = {}
+
+    y_pred = regressor_logistic_regression.predict(X_test)
     score = accuracy_score(y_test, y_pred)
     precision = precision_score(y_test, y_pred)
     recall = recall_score(y_test, y_pred)
+    f1 = f1_score(y_test, y_pred)
     logger = logging.getLogger(__name__)
-    logger.info("Model has accuracy of %.3f on test data.", score)
-    logger.info("Model has precision of %.3f on test data.", precision)
-    logger.info("Model has recall of %.3f on test data.", recall)
+    logger.info("Logistic Regression Model has accuracy of %.3f on test data.", score)
+    logger.info("Logistic Regression Model has precision of %.3f on test data.", precision)
+    logger.info("Logistic Regression Model has recall of %.3f on test data.", recall)
+    logger.info("Logistic Regression Model has f1_Score of %.3f on test data.", f1)
+    metrics["logistic_regression"] = [score, precision, recall, f1, y_pred]
 
-    metrics = {"score": score, "precision": precision, "recall": recall}
+    y_pred = regressor_random_forest.predict(X_test)
+    score = accuracy_score(y_test, y_pred)
+    precision = precision_score(y_test, y_pred)
+    recall = recall_score(y_test, y_pred)
+    f1 = f1_score(y_test, y_pred)
+    logger = logging.getLogger(__name__)
+    logger.info("Random Forest Model has accuracy of %.3f on test data.", score)
+    logger.info("Random Forest Model has precision of %.3f on test data.", precision)
+    logger.info("Random Forest Model has recall of %.3f on test data.", recall)
+    logger.info("Random Forest Model has f1_Score of %.3f on test data.", f1)
+    metrics["random_forest"] = [score, precision, recall, f1, y_pred]
 
-    return y_pred, metrics
+    y_pred = regressor_xg_boost.predict(X_test)
+    score = accuracy_score(y_test, y_pred)
+    precision = precision_score(y_test, y_pred)
+    recall = recall_score(y_test, y_pred)
+    f1 = f1_score(y_test, y_pred)
+    logger = logging.getLogger(__name__)
+    logger.info("XG Boost Model has accuracy of %.3f on test data.", score)
+    logger.info("XG Boost Model has precision of %.3f on test data.", precision)
+    logger.info("XG Boost Model has recall of %.3f on test data.", recall)
+    logger.info("XG Boost Model has f1_Score of %.3f on test data.", f1)
+    metrics["xg_boost"] = [score, precision, recall, f1, y_pred]
+
+    y_pred = regressor_decision_tree.predict(X_test)
+    score = accuracy_score(y_test, y_pred)
+    precision = precision_score(y_test, y_pred)
+    recall = recall_score(y_test, y_pred)
+    f1 = f1_score(y_test, y_pred)
+    logger = logging.getLogger(__name__)
+    logger.info("Decision Tree Model has accuracy of %.3f on test data.", score)
+    logger.info("Decision Tree Model has precision of %.3f on test data.", precision)
+    logger.info("Decision Tree Model has recall of %.3f on test data.", recall)
+    logger.info("Decision Tree Model has f1_Score of %.3f on test data.",f1)
+    metrics["decision_tree"] = [score, precision, recall, f1, y_pred]
+
+    best_f1_score = 0
+    model = None
+    y_pred = []
+
+    for i in metrics.keys():
+        if(metrics[i][3] > best_f1_score):
+            best_f1_score = metrics[i][3]
+            model = i
+            y_pred = metrics[i][-1]
+    
+    for i in metrics.keys():
+        del metrics[i][-1]
+
+    logger.info("Selected Model Algorithm: "+model)
+
+    if(model == "logistic_regression"):
+        regressor = regressor_logistic_regression
+    elif(model == "decision_tree"):
+        regressor = regressor_decision_tree
+    elif(model == "random_forest"):
+        regressor = regressor_random_forest
+    elif(model == "xg_boost"):
+        regressor = regressor_xg_boost
+
+    metrics = {f"value_{i+1}": value for i, value in enumerate(metrics[model])}
+
+    return y_pred, metrics, regressor
 
 
 def prediction_drift_check(y_test: pd.Series, y_pred: pd.Series):
