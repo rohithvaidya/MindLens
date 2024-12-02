@@ -1,1 +1,1 @@
-{}
+{"dataset": {"rows": 140700, "columns": 20, "file_size": 16546297}, "model_input_dataset": {"rows": 140602, "columns": 19, "file_size": 16384}, "X_train": {"rows": 112481, "columns": 18, "file_size": 0}, "X_test": {"rows": 28121, "columns": 18, "file_size": 4096}, "y_test": {"rows": 28121, "columns": 1, "file_size": 4096}}

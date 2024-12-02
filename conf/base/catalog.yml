@@ -83,9 +83,25 @@ data_drift_plotly:
   filepath: data/08_reporting/data_drift_plotly.json
   versioned: True
 
-regressor:
-  type: kedro_mlflow.io.models.MlflowModelTrackingDataset
-  flavor: mlflow.sklearn
+regressor_logistic_regression:
+  type: pickle.PickleDataset
+  filepath: data/06_models/regressor_logistic_regression
+  versioned: true
+
+regressor_random_forest:
+  type: pickle.PickleDataset
+  filepath: data/06_models/regressor_random_forest
+  versioned: true
+
+regressor_xg_boost:
+  type: pickle.PickleDataset
+  filepath: data/06_models/regressor_xg_boost
+  versioned: true
+
+regressor_decision_tree:
+  type: pickle.PickleDataset
+  filepath: data/06_models/regressor_decision_tree
+  versioned: true
 
 sklearn_model:
     type: kedro_mlflow.io.artifacts.MlflowArtifactDataset
@@ -97,6 +113,15 @@ sklearn_model:
 X_test:
   type: pandas.CSVDataset
   filepath: "data/05_model_input/X_test.csv"
+  load_args:
+    sep: ","
+  save_args:
+    index: False
+  versioned: True
+
+X_train:
+  type: pandas.CSVDataset
+  filepath: "data/05_model_input/X_train.csv"
   load_args:
     sep: ","
   save_args:
