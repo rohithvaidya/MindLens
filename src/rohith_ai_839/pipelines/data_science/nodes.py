@@ -270,6 +270,7 @@ def prediction_drift_check(y_test: pd.Series, y_pred: pd.Series):
         raise Exception("Prediction Variable Drift Detected. Pipeline Failure")
     else:
         report.save_html("data/08_reporting/evidently_plot.html")
+        print("PRED_DRIFT_SAVED")
         return json.loads(report.json())
 
 
@@ -300,22 +301,32 @@ def plot_and_save(column_name, current_data, reference_data):
     A PNG file named after the column is saved to 'data/08_reporting/' containing the
     distribution plot for the specified column.
     """
+    i = 0
+    print(i) # 0
+    i+=1
     current_x = current_data["x"]
     current_y = current_data["y"]
 
+    print(i) # 1
+    i+=1
     reference_x = reference_data["x"]
     reference_y = reference_data["y"]
 
+    print(i) # 2
+    i+=1
     # Create the plot
     fig = go.Figure()
 
+    print(i) # 3
+    i+=1
     # Add trace for current data
     fig.add_trace(
         go.Scatter(
             x=current_x, y=current_y, mode="lines+markers", name="Current Distribution"
         )
     )
-
+    print(i) # 4
+    i+=1
     # Add trace for reference data
     fig.add_trace(
         go.Scatter(
@@ -325,7 +336,8 @@ def plot_and_save(column_name, current_data, reference_data):
             name="Reference Distribution",
         )
     )
-
+    print(i) # 5
+    i+=1
     # Update layout
     fig.update_layout(
         title=f"Distributions for {column_name}",
@@ -334,7 +346,8 @@ def plot_and_save(column_name, current_data, reference_data):
         legend=dict(x=0.02, y=0.98),
         template="plotly_dark",
     )
-
+    print(i) # 6
+    i+=1
     # Show the plot
     pio.write_image(
         fig,
@@ -342,6 +355,8 @@ def plot_and_save(column_name, current_data, reference_data):
             column_name.replace("/", "_")
         ),
     )
+    print(i) # 7
+    i+=1
 
 
 def report_plotly(data_drift, pred_drift):
@@ -375,11 +390,17 @@ def report_plotly(data_drift, pred_drift):
     """
     data_drift_by_columns = data_drift["metrics"][1]["result"]["drift_by_columns"]
     pred_drift_by_columns = pred_drift["metrics"][1]["result"]["drift_by_columns"]
+    print("-"*50)
+    print("START LOOP 1")
     for column, data in data_drift_by_columns.items():
+        print(column, data)
         current_distribution = data["current"]["small_distribution"]
         reference_distribution = data["reference"]["small_distribution"]
         plot_and_save(column, current_distribution, reference_distribution)
+    print("-"*50)
+    print("START LOOP 2")
     for column, data in pred_drift_by_columns.items():
+        print(column, data)
         current_distribution = data["current"]["small_distribution"]
         reference_distribution = data["reference"]["small_distribution"]
         plot_and_save(column, current_distribution, reference_distribution)

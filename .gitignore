@@ -149,3 +149,13 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+node_modules/
+package-lock.json
+
+mlruns/
+quarto/.quarto/
+quarto/_site/
+
+info.log
+.viz/

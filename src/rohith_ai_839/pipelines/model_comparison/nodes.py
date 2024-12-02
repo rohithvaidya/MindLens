@@ -47,7 +47,7 @@ def aggregate_shap_explanations(X_train, sklearn_model):
         plt.ylabel('SHAP Value')
 
         # Save the plot as a PNG image
-        scatter_plot_path = f"data/08_reporting/shap_dependency_scatter_{feature_name.split("/")[0]}.png"
+        scatter_plot_path = f"data/08_reporting/shap_dependency_scatter_{feature_name.split('/')[0]}.png"
         plt.savefig(scatter_plot_path)
         plt.close()  # Close the plot to free up memory
    
