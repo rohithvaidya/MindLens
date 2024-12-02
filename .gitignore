@@ -152,3 +152,9 @@ venv.bak/
 
 node_modules/
 package-lock.json
+
+mlruns/
+quarto/.quarto/
+quarto/_site/
+
+info.log
