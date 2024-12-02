@@ -1,0 +1,15 @@
+artifact_uri: rohith-ai-839/mlruns/497475562666395043/4ebf676cbf8e4ba7996196ed0a6a5dd9/artifacts
+end_time: 1733046466933
+entry_point_name: ''
+experiment_id: '497475562666395043'
+lifecycle_stage: active
+run_id: 4ebf676cbf8e4ba7996196ed0a6a5dd9
+run_name: __default__
+run_uuid: 4ebf676cbf8e4ba7996196ed0a6a5dd9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733046454890
+status: 4
+tags: []
+user_id: divya
