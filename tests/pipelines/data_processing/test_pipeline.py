@@ -1,16 +1,10 @@
-import json
-
 import pandas as pd
 import pytest
-from evidently.metric_preset import DataDriftPreset
 from evidently.metrics import *
-from evidently.report import Report
 from evidently.tests import *
-from sklearn.model_selection import train_test_split
-
-
 
 # Data Quality Checks
+
 
 @pytest.fixture
 def dummy_data():
@@ -21,6 +15,6 @@ def test_missing_values(dummy_data):
     var = False
     for i in dummy_data.isna().keys():
         for j in dummy_data.isna()[i]:
-            if(j):
+            if j:
                 var = True
     assert not (var)

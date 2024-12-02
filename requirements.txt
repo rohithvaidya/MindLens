@@ -14,4 +14,6 @@ kedro-datasets[plotly.PlotlyDataset, plotly.JSONDataset]
 evidently
 kedro-mlflow
 mlflow
+plotly==5.23.0
+kaleido==0.1.0post1
 

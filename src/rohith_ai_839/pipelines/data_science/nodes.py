@@ -12,7 +12,6 @@ from evidently.tests import *
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 from sklearn.model_selection import train_test_split
-import shap
 
 
 def split_data(data: pd.DataFrame, parameters: Dict) -> Tuple:
@@ -25,7 +24,7 @@ def split_data(data: pd.DataFrame, parameters: Dict) -> Tuple:
         Split data.
     """
     X = data[parameters["features"]]
-    y = data["y"]
+    y = data["Depression"]
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=parameters["test_size"], random_state=parameters["random_state"]
     )
@@ -82,7 +81,7 @@ def quality_drift_check(
     report.run(reference_data=X_train, current_data=X_test)
     report.save_html("data/08_reporting/data_drift.html")
     data_drift_str = str(report.json)
-    
+
     return json.loads(report.json())
 
 
@@ -105,7 +104,7 @@ def evaluate_model(
     logger.info("Model has precision of %.3f on test data.", precision)
     logger.info("Model has recall of %.3f on test data.", recall)
 
-    metrics = {"score":score, "precision":precision, "recall":recall}
+    metrics = {"score": score, "precision": precision, "recall": recall}
 
     return y_pred, metrics
 
@@ -143,12 +142,12 @@ def prediction_drift_check(y_test: pd.Series, y_pred: pd.Series):
 
     report.run(
         reference_data=y_test,
-        current_data=pd.DataFrame(y_pred, columns=["y"]),
+        current_data=pd.DataFrame(y_pred, columns=["Depression"]),
     )
 
-    if json.loads(report.json())["metrics"][1]["result"]["drift_by_columns"]["y"][
-        "drift_detected"
-    ]:
+    if json.loads(report.json())["metrics"][1]["result"]["drift_by_columns"][
+        "Depression"
+    ]["drift_detected"]:
         raise Exception("Prediction Variable Drift Detected. Pipeline Failure")
     else:
         report.save_html("data/08_reporting/evidently_plot.html")
