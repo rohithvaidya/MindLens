@@ -7,7 +7,7 @@ import os
 import json
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:4869", "*"])  # Enable CORS for all routes
+CORS(app, origins=["http://localhost:4869", "http://127.0.0.1:4869", "*"])  # Enable CORS for all routes
 
 STATIC_DIR = 'static'
 USERS_CSV_FILE = 'users.csv'
@@ -94,7 +94,8 @@ def submit_survey():
     
     user_df = pd.read_csv(USERS_CSV_PATH)
     
-    location = user_df.loc[user_df['id'] == data['id']].index[0]
+    
+    location = user_df.loc[user_df['id'] == int(data['id'])].index[0]
     
     print("location: ", location)
     
