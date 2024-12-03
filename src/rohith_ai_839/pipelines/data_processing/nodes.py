@@ -74,3 +74,55 @@ def preprocess_dataset(dataset: pd.DataFrame) -> pd.DataFrame:
     )
 
     return dataset
+
+
+def preprocess_user_predictions_log(dataset: pd.DataFrame, survey_inputs_log: pd.DataFrame) -> pd.DataFrame:
+     
+    training_dataset = dataset
+    test_dataset = survey_inputs_log
+    
+   # Remove cities with less than 5 depressed people from the training dataset
+    unique_cities = training_dataset["City"].unique()
+    city_counts = training_dataset[training_dataset["Depression"] == 1.0]["City"].value_counts()
+    cities_to_keep = city_counts[city_counts >= 5].index
+    test_dataset = test_dataset[test_dataset["City"].isin(cities_to_keep)]
+    
+    # Clean the "Profession" feature
+    top_professions = training_dataset["Profession"].value_counts()[1:35].index.tolist()
+    test_dataset["Profession"] = np.where(
+        test_dataset["Profession"].isin(top_professions), test_dataset["Profession"], "Other"
+    )
+    
+    # Categorize "Sleep Duration"
+    top_sleep_durations = training_dataset["Sleep Duration"].value_counts()[0:4].index.tolist()
+    test_dataset["Sleep Duration"] = np.where(
+        test_dataset["Sleep Duration"].isin(top_sleep_durations), test_dataset["Sleep Duration"], "1-8"
+    )
+    
+    # Categorize "Dietary Habits"
+    top_dietary_habits = training_dataset["Dietary Habits"].value_counts()[0:3].index.tolist()
+    test_dataset["Dietary Habits"] = np.where(
+        test_dataset["Dietary Habits"].isin(top_dietary_habits), test_dataset["Dietary Habits"], "Moderate"
+    )
+    
+    # Categorize "Degree"
+    top_degrees = training_dataset["Degree"].value_counts()[:27].index.tolist()
+    test_dataset["Degree"] = np.where(
+        test_dataset["Degree"].isin(top_degrees), test_dataset["Degree"], "Other"
+    )
+    
+    # Fill missing values
+    test_dataset = test_dataset.fillna(0)
+    
+    # Label encoding for object columns
+    object_cols = [col for col in test_dataset.columns if test_dataset[col].dtype == "object"]
+    le = LabelEncoder()
+    for col in object_cols:
+        test_dataset[col] = le.fit_transform(test_dataset[col])
+    
+    # Rename the column "Have you ever had suicidal thoughts ?"
+    test_dataset = test_dataset.rename(
+        columns={"Have you ever had suicidal thoughts ?": "suicidal_thoughts"}
+    )
+    
+    return test_dataset

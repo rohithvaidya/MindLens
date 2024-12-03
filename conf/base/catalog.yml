@@ -162,3 +162,7 @@ depression_synthetic_cleaned:
 user_accounts_predictions_log:
   type: pandas.CSVDataset
   filepath: data/user_accounts_predictions_log.csv
+
+survey_inputs_log:
+  type: pandas.CSVDataset
+  filepath: data/survey_inputs_log.csv

@@ -1,9 +1,12 @@
 import os
 import random
-
+import json
 import pandas as pd
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
+import requests
+
+mlflow_url = "http://127.0.0.1:8001/invocations"
 
 app = Flask(__name__)
 CORS(
@@ -145,6 +148,38 @@ def submit_survey():
     print(data)
     return jsonify({"message": "data_received", "success": True}), 201
 
+
+@app.route("/right_to_erase")
+def right_to_erasure():
+    
+    data = request.get_json()
+
+    # Removing info from source dataset
+    df = pd.read_csv("../data/01_raw/depression_synthetic.csv")
+    df = df[
+        ~(df['Name'] == data["Name"])
+    ]
+    df.to_csv("../data/01_raw/depression_synthetic.csv")
+
+    # Running complete training after change in dataset
+    os.system("kedro run")
+
+    response = {"message": "Your personal data has been removed and the model has been retrained!"}
+    return jsonify(response), 200
+
+@app.route("/update_predictions")
+def update_predictions():
+    df = pd.read_csv("../data/user_accounts_predictions_log.csv")
+    x_pred = df.drop(columns=["id", "Name", "City", "Depression"]).iloc[0].tolist()
+    ml_flow_response = requests.post(
+        mlflow_url,
+        headers={"Content-Type": "application/json"},
+        data=json.dumps(json.loads(x_pred)),  # Assuming x_pred is JSON string
+    )
+
+        # Get the predicted value (assuming it's in the JSON response)
+    y_pred = ml_flow_response.json()
+    print(y_pred)
 
 if __name__ == "__main__":
     if not os.path.exists(USERS_CSV_PATH):
