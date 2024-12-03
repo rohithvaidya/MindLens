@@ -122,8 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const data = await response.json();
                 // Redirect or take an action based on server response
                 if (data.success) {                    
-                    // window.location.href = "account.html"; // Replace with your target page
-                    console.log(data)
+                    window.location.href = "results.html"; // Replace with your target page
                 } else {
                     alert(`${data.message}`);
                 }
