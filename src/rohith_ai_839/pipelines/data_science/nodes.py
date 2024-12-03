@@ -9,14 +9,12 @@ from evidently.metric_preset import DataDriftPreset
 from evidently.metrics import *
 from evidently.report import Report
 from evidently.tests import *
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, precision_score, recall_score
-from sklearn.model_selection import train_test_split
-from sklearn import metrics
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
+from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from xgboost import XGBClassifier
-from sklearn.metrics import f1_score
 
 
 def split_data(data: pd.DataFrame, parameters: Dict) -> Tuple:
@@ -36,7 +34,9 @@ def split_data(data: pd.DataFrame, parameters: Dict) -> Tuple:
     return X_train, X_test, y_train, y_test
 
 
-def train_logistic_regression(X_train: pd.DataFrame, y_train: pd.Series) -> LogisticRegression:
+def train_logistic_regression(
+    X_train: pd.DataFrame, y_train: pd.Series
+) -> LogisticRegression:
     """Trains the Logistic regression model.
 
     Args:
@@ -51,6 +51,7 @@ def train_logistic_regression(X_train: pd.DataFrame, y_train: pd.Series) -> Logi
     sklearn_model = regressor
 
     return regressor
+
 
 def train_random_forest(X_train: pd.DataFrame, y_train: pd.Series):
     """Trains the Random Forest model.
@@ -68,7 +69,10 @@ def train_random_forest(X_train: pd.DataFrame, y_train: pd.Series):
 
     return regressor
 
-def train_decision_tree(X_train: pd.DataFrame, y_train: pd.Series) -> DecisionTreeClassifier:
+
+def train_decision_tree(
+    X_train: pd.DataFrame, y_train: pd.Series
+) -> DecisionTreeClassifier:
     """Trains the Decision Tree model.
 
     Args:
@@ -78,12 +82,13 @@ def train_decision_tree(X_train: pd.DataFrame, y_train: pd.Series) -> DecisionTr
     Returns:
         Trained model.
     """
-    
+
     regressor = DecisionTreeClassifier(max_depth=10, random_state=42)
     regressor.fit(X_train, y_train)
     sklearn_model = regressor
 
     return regressor
+
 
 def train_xg_boost(X_train: pd.DataFrame, y_train: pd.Series):
     """Trains the Decision Tree model.
@@ -95,7 +100,7 @@ def train_xg_boost(X_train: pd.DataFrame, y_train: pd.Series):
     Returns:
         Trained model.
     """
-    
+
     regressor = XGBClassifier(random_state=42)
     regressor.fit(X_train, y_train)
     sklearn_model = regressor
@@ -140,7 +145,12 @@ def quality_drift_check(
 
 
 def evaluate_all_models(
-    regressor_logistic_regression, regressor_random_forest, regressor_xg_boost, regressor_decision_tree, X_test: pd.DataFrame, y_test: pd.Series
+    regressor_logistic_regression,
+    regressor_random_forest,
+    regressor_xg_boost,
+    regressor_decision_tree,
+    X_test: pd.DataFrame,
+    y_test: pd.Series,
 ) -> pd.Series:
     """Calculates and logs the coefficient of determination.
 
@@ -158,7 +168,9 @@ def evaluate_all_models(
     f1 = f1_score(y_test, y_pred)
     logger = logging.getLogger(__name__)
     logger.info("Logistic Regression Model has accuracy of %.3f on test data.", score)
-    logger.info("Logistic Regression Model has precision of %.3f on test data.", precision)
+    logger.info(
+        "Logistic Regression Model has precision of %.3f on test data.", precision
+    )
     logger.info("Logistic Regression Model has recall of %.3f on test data.", recall)
     logger.info("Logistic Regression Model has f1_Score of %.3f on test data.", f1)
     metrics["logistic_regression"] = [score, precision, recall, f1, y_pred]
@@ -196,7 +208,7 @@ def evaluate_all_models(
     logger.info("Decision Tree Model has accuracy of %.3f on test data.", score)
     logger.info("Decision Tree Model has precision of %.3f on test data.", precision)
     logger.info("Decision Tree Model has recall of %.3f on test data.", recall)
-    logger.info("Decision Tree Model has f1_Score of %.3f on test data.",f1)
+    logger.info("Decision Tree Model has f1_Score of %.3f on test data.", f1)
     metrics["decision_tree"] = [score, precision, recall, f1, y_pred]
 
     best_f1_score = 0
@@ -204,28 +216,28 @@ def evaluate_all_models(
     y_pred = []
 
     for i in metrics.keys():
-        if(metrics[i][3] > best_f1_score):
+        if metrics[i][3] > best_f1_score:
             best_f1_score = metrics[i][3]
             model = i
             y_pred = metrics[i][-1]
-    
+
     for i in metrics.keys():
         del metrics[i][-1]
 
-    logger.info("Selected Model Algorithm: "+model)
+    logger.info("Selected Model Algorithm: " + model)
 
-    if(model == "logistic_regression"):
+    if model == "logistic_regression":
         regressor = regressor_logistic_regression
-    elif(model == "decision_tree"):
+    elif model == "decision_tree":
         regressor = regressor_decision_tree
-    elif(model == "random_forest"):
+    elif model == "random_forest":
         regressor = regressor_random_forest
-    elif(model == "xg_boost"):
+    elif model == "xg_boost":
         regressor = regressor_xg_boost
 
     metrics = {f"value_{i+1}": value for i, value in enumerate(metrics[model])}
 
-    return y_pred, metrics, regressor
+    return y_pred, metrics, regressor, regressor
 
 
 def prediction_drift_check(y_test: pd.Series, y_pred: pd.Series):
@@ -270,7 +282,6 @@ def prediction_drift_check(y_test: pd.Series, y_pred: pd.Series):
         raise Exception("Prediction Variable Drift Detected. Pipeline Failure")
     else:
         report.save_html("data/08_reporting/evidently_plot.html")
-        print("PRED_DRIFT_SAVED")
         return json.loads(report.json())
 
 
@@ -301,32 +312,23 @@ def plot_and_save(column_name, current_data, reference_data):
     A PNG file named after the column is saved to 'data/08_reporting/' containing the
     distribution plot for the specified column.
     """
-    i = 0
-    print(i) # 0
-    i+=1
+
     current_x = current_data["x"]
     current_y = current_data["y"]
 
-    print(i) # 1
-    i+=1
     reference_x = reference_data["x"]
     reference_y = reference_data["y"]
 
-    print(i) # 2
-    i+=1
     # Create the plot
     fig = go.Figure()
 
-    print(i) # 3
-    i+=1
     # Add trace for current data
     fig.add_trace(
         go.Scatter(
             x=current_x, y=current_y, mode="lines+markers", name="Current Distribution"
         )
     )
-    print(i) # 4
-    i+=1
+
     # Add trace for reference data
     fig.add_trace(
         go.Scatter(
@@ -336,8 +338,7 @@ def plot_and_save(column_name, current_data, reference_data):
             name="Reference Distribution",
         )
     )
-    print(i) # 5
-    i+=1
+
     # Update layout
     fig.update_layout(
         title=f"Distributions for {column_name}",
@@ -346,8 +347,7 @@ def plot_and_save(column_name, current_data, reference_data):
         legend=dict(x=0.02, y=0.98),
         template="plotly_dark",
     )
-    print(i) # 6
-    i+=1
+
     # Show the plot
     pio.write_image(
         fig,
@@ -355,8 +355,6 @@ def plot_and_save(column_name, current_data, reference_data):
             column_name.replace("/", "_")
         ),
     )
-    print(i) # 7
-    i+=1
 
 
 def report_plotly(data_drift, pred_drift):
@@ -390,17 +388,11 @@ def report_plotly(data_drift, pred_drift):
     """
     data_drift_by_columns = data_drift["metrics"][1]["result"]["drift_by_columns"]
     pred_drift_by_columns = pred_drift["metrics"][1]["result"]["drift_by_columns"]
-    print("-"*50)
-    print("START LOOP 1")
     for column, data in data_drift_by_columns.items():
-        print(column, data)
         current_distribution = data["current"]["small_distribution"]
         reference_distribution = data["reference"]["small_distribution"]
         plot_and_save(column, current_distribution, reference_distribution)
-    print("-"*50)
-    print("START LOOP 2")
     for column, data in pred_drift_by_columns.items():
-        print(column, data)
         current_distribution = data["current"]["small_distribution"]
         reference_distribution = data["reference"]["small_distribution"]
         plot_and_save(column, current_distribution, reference_distribution)

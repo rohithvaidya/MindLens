@@ -6,10 +6,10 @@ from .nodes import (
     quality_drift_check,
     report_plotly,
     split_data,
+    train_decision_tree,
     train_logistic_regression,
     train_random_forest,
     train_xg_boost,
-    train_decision_tree
 )
 
 
@@ -48,8 +48,15 @@ def create_pipeline(**kwargs) -> Pipeline:
             ),
             node(
                 func=evaluate_all_models,
-                inputs=["regressor_logistic_regression", "regressor_decision_tree", "regressor_xg_boost", "regressor_random_forest","X_test", "y_test"],
-                outputs=["y_pred", "metrics", "sklearn_model"],
+                inputs=[
+                    "regressor_logistic_regression",
+                    "regressor_decision_tree",
+                    "regressor_xg_boost",
+                    "regressor_random_forest",
+                    "X_test",
+                    "y_test",
+                ],
+                outputs=["y_pred", "metrics", "sklearn_model", "regressor"],
                 name="evaluate_all_models",
             ),
             node(

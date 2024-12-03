@@ -103,6 +103,10 @@ regressor_decision_tree:
   filepath: data/06_models/regressor_decision_tree
   versioned: true
 
+regressor:
+  type: kedro_mlflow.io.models.MlflowModelTrackingDataset
+  flavor: mlflow.sklearn
+
 sklearn_model:
     type: kedro_mlflow.io.artifacts.MlflowArtifactDataset
     dataset:
@@ -154,3 +158,7 @@ depression_synthetic_cleaned:
   type: pandas.CSVDataset
   filepath: data/02_intermediate/depression_synthetic.csv
   versioned: True
+
+user_accounts_predictions_log:
+  type: pandas.CSVDataset
+  filepath: data/user_accounts_predictions_log.csv
