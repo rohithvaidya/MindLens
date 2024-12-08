@@ -7,6 +7,8 @@ from flask_cors import CORS, cross_origin
 from flask_socketio import SocketIO
 import requests
 
+from openai import OpenAI
+
 from kedro.framework.context import KedroContext
 from kedro.framework.session import KedroSession
 from kedro.framework.startup import bootstrap_project
@@ -15,7 +17,14 @@ from kedro.framework.project import find_pipelines
 
 import time
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 mlflow_url = "http://127.0.0.1:8001/invocations"
+client = OpenAI(
+    api_key=os.environ.get("OPENAI_API_KEY"),  # This is the default and can be omitted
+)
 
 app = Flask(__name__)
 CORS(
@@ -69,6 +78,7 @@ def login():
     print(data)
     # Extract the ID from the JSON data
     user_name = data.get("name")
+    print(data.get("id"))
     user_id = int(data.get("id"))
 
     print("user_name: ", user_name)
@@ -197,6 +207,29 @@ def update_predictions():
     y_pred = ml_flow_response.json()
     print(y_pred)
     
+
+# function to send the message to ChatGPT
+def send_to_chatgpt(message):
+    try:
+        
+        chat_completion = client.chat.completions.create(
+            messages=[
+                    {
+                        "role": "system",
+                        "content": "You are an assistant that helps analyze and explain feature contributions that tell whether the person has Depression or not.",
+                    },
+                    {
+                        "role": "user",
+                        "content": message
+                    }
+                ],
+                model="gpt-4o",
+            )
+        return chat_completion.choices[0].message.content
+    except Exception as e:
+        return f"An error occurred: {e}"
+    
+
 @app.route("/run_pipeline", methods=["POST"])
 @cross_origin()
 def run_pipeline():
@@ -205,7 +238,7 @@ def run_pipeline():
     print(data)
     
     username = data['username']
-    userid = data['userid']
+    userid = int(data['userid'])
     
     socketio.emit("data_processing_start", {"success":True})    
     with KedroSession.create(project_path=KEDRO_PROJECT_PATH, env=KEDRO_ENV) as SESSION:
@@ -214,16 +247,77 @@ def run_pipeline():
                       node_names =["preprocess_user_predictions_log_node"], 
                       from_inputs=["dataset", USER_DATA_CATALOG_NAME], 
                       to_outputs=["user_accounts_predictions_log"])
-    time.sleep(5)
+    time.sleep(2)
+    
+    user_df = KEDRO_CATALOG.load("user_accounts_predictions_log")
+    
+    x_pred = user_df.loc[user_df['id']==userid].drop(columns=["id", "Name", "City", "Depression"])
+    
+    x_pred = x_pred.values[0].tolist()
+    
+    data = {
+        "instances": [x_pred]
+    }
     
     socketio.emit("inference_start", {"success":True})
     
-    time.sleep(5)
+    ml_flow_response = requests.post(
+        mlflow_url,
+        headers={"Content-Type": "application/json"},
+        data=json.dumps(data),  # Assuming x_pred is JSON string
+    )
+    
+    prediction = ml_flow_response.json()['predictions'][0]
+    user_df = KEDRO_CATALOG.load("user_accounts_predictions_log")
+    user_df.loc[user_df['id']==userid]['Depression'] = int(prediction)
+    
+    prediction_mapped = 'Yes' if bool(prediction) else 'No'
+    
+    time.sleep(2)
     
     socketio.emit("interpretation_start", {"success":True})
     
-    time.sleep(5)
+    print("This is fine")    
+    with KedroSession.create(project_path=KEDRO_PROJECT_PATH, env=KEDRO_ENV, extra_params={"userid": userid}) as SESSION:
+        print("This is also fine")    
+        
+        SESSION.run(pipeline_name='model_xplain', 
+                      node_names =["xplain_model_prediction"], 
+                      from_inputs=["sklearn_model", "user_accounts_predictions_log", "params:userid"], 
+                      to_outputs=["shap_instance_features_to_prediction", "shap_instance_features_away_prediction"])
     
+    features_to_predicted_label = KEDRO_CATALOG.load("shap_instance_features_to_prediction")
+    features_away_predicted_label = KEDRO_CATALOG.load("shap_instance_features_away_prediction")
+    
+    print("features_to_predicted_label: ", features_to_predicted_label)
+    print("features_away_predicted_label: ", features_away_predicted_label)
+    
+    # Generate the strings
+    to_contribution_strings = [
+        f'"{row["name"]}" contributes {row["contribution"]:.6f} towards "{prediction_mapped}" Depression'
+        for _, row in features_to_predicted_label.iterrows()
+    ]
+    
+    away_contribution_strings = [
+        f'"{row["name"]}" contributes {row["contribution"]:.6f} away from "{prediction_mapped}" Depression'
+        for _, row in features_away_predicted_label.iterrows()
+    ]
+    
+    to_contribution_strings = "\n".join(to_contribution_strings)
+    away_contribution_strings = "\n".join(away_contribution_strings)
+    
+    # print("to_contribution_strings: ", to_contribution_strings)
+    # print("away_contribution_strings: ", away_contribution_strings)
+    
+    message = "Use the given data and interpret in human language what the concerned person should work/focus on to help with his depression. Be positive, empathetic and reassuring. Start with the things that take him away depression and then then address the things that are contributing to his mental stress and how he can work on it. Be like a professional and don't ask anything else. Don't write huge paragraphs. Be very succint as well. Not more than 200 words."
+    
+    prompt = "\n".join([to_contribution_strings, away_contribution_strings, message])
+    
+    print("prompt: ", prompt)
+    
+    interpretation = send_to_chatgpt(prompt)
+    
+    print(interpretation)
     socketio.emit("all_done", {"success":True})
     
     return jsonify(
@@ -232,6 +326,8 @@ def run_pipeline():
                 "success": True,
                 "name": username,
                 "id": userid,
+                "prediction": prediction_mapped,
+                "interpretation": interpretation
             }
         )
     

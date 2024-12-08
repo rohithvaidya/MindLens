@@ -3,6 +3,8 @@ let userid = sessionStorage.getItem('id')
 const username_span = document.getElementById("username")
 const loader_div = document.getElementById("loader")
 const loading_msg_div = document.getElementById("loading-msg")
+const result_msg_div = document.getElementById("result-msg")
+const mh_image_div = document.getElementById("mh-image")
 
 const socket = io('http://localhost:5000');
 
@@ -81,9 +83,32 @@ async function run_pipeline() {
         // Handle the response from the server
         if (response.ok) {
             const data = await response.json();
+            mh_image_div.classList.remove('hidden')
             // Redirect or take an action based on server response
             if (data.success) {
-                console.log(data)                    
+                console.log(data)
+                loading_msg_div.classList.add("hidden");
+                if (data.prediction == 'Yes'){
+                    result_msg_div.innerHTML = `<div class="text-md">Based on what we've observed, it seems you might be experiencing 
+                    symptoms of serious depression. While this can feel overwhelming, it's important to remember 
+                    that you're not alone in this, and there's help available.
+                    <br>
+
+                    We'd strongly encourage you to consider speaking with a specialist who can provide the support 
+                    and guidance you need. To make things easier, you can take these interpretations with you—they 
+                    should give the specialist helpful insights into your screening results.</div><br><br>`
+                } else {
+                    result_msg_div.innerHTML = `<div class="text-md">Life can sometimes feel overwhelming, and it's completely normal to 
+                    seek clarity and reassurance during tough times. It's great that you took this step to better 
+                    understand your feelings and mental health.
+                    
+                    <br>
+                    Based on our observations, the results suggest that you are not showing signs of depression. 
+                    This is encouraging news, and we hope it brings you some relief. If you'd like, you can review the 
+                    provided interpretations to better understand your screening outcomes.</div>
+                    <br><br>`
+                }
+                result_msg_div.innerHTML += `<div class="text-sm" style="padding-top: 20px;">${data.interpretation}</div>`
                 // window.location.href = "results.html"; // Replace with your target page
             } else {
                 alert(`${data.message}`);
