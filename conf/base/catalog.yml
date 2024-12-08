@@ -55,6 +55,14 @@ pred_drift:
   filepath: data/07_model_output/pred_drift.json
   versioned: True
 
+shap_instance_features_to_prediction:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/shap_instance_features_to_prediction.json
+
+shap_instance_features_away_prediction:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/shap_instance_features_away_prediction.json
+
 
 dummy_confusion_matrix:
   type: matplotlib.MatplotlibWriter

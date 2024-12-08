@@ -1,5 +1,6 @@
 id,Name,Gender,Age,City,Working Professional or Student,Profession,Academic Pressure,Work Pressure,CGPA,Study Satisfaction,Job Satisfaction,Sleep Duration,Dietary Habits,Degree,Have you ever had suicidal thoughts ?,Work/Study Hours,Financial Stress,Family History of Mental Illness,Depression
 673556,Rohith,Male,25.0,Bengaluru,Student,Research Scholar,5.0,5.0,8.0,3.0,4.0,7-8 hours,Unhealthy,BTech,No,8.0,4.0,No,
 485259,Divyam,,,,,,,,,,,,,,,,,,
-517911,Paritosh,Male,25.0,Bangalore,Working Professional,Research Assistant,5.0,5.0,2.0,1.0,5.0,More than 8 hours,Healthy,B.E.,No,2.0,5.0,No,
+517911,Paritosh,Male,26.0,Bangalore,Working Professional,Research Scholar,5.0,5.0,4.0,1.0,1.0,More than 8 hours,Unhealthy,B.E.,Yes,5.0,3.0,No,
 239024,Kushaal,Male,25.0,Bengaluru,Student,Research Scholar,5.0,5.0,8.0,3.0,4.0,7-8 hours,Unhealthy,BTech,No,8.0,4.0,No,
+102799,John Doe,Male,30,Jaipur,Working Professional,Teacher,5,5,4,1,1,More than 8 hours,Unhealthy,Master of Education,Yes,1,5,No,
