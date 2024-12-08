@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YOUHAVEDEPRESSION.com</title>
     <link href="index-output.css" rel="stylesheet">
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
 </head>
-<body class="bg-sky-700 text-zinc-800 absolute m-auto left-1/2 -translate-x-1/2 w-full md:w-[500px] font-urbanist">
-    <div id="main" class="bg-sky-300 text-2xl h-screen shadow-lg">
+<body class="bg-sky-700 text-zinc-800 absolute m-auto left-1/2 -translate-x-1/2 w-full md:w-[500px] font-urbanist" onload="run_pipeline()">
+    <div id="main" class="bg-sky-300 text-2xl shadow-lg">
         <div class="bg-sky-700 text-zinc-300 text-center p-4">
             MindLens
         </div>
         <div class="content-container">
-            <div class="p-4">Hi, <span id="username"></span></div>
+            <div class="p-4">Hi, <span id="username"></span>. </div>
 
-            <div class="mt-6 flex flex-col justify-center items-center">
+            <div class="m-6 p-6 flex flex-col justify-center items-center">
+                
+                <div id="mh-image" class="w-1/2 hidden">
+                    <img src="mh_image.webp" alt="mental health image" width="250px">
+                </div>
+                <div id="loading-msg" class="pb-6"></div>
+                <div id="result-msg" class="flex flex-col pb-6 mx-6 justify-center items-center text-sm"></div>
+                <div id="loader" class=""></div> 
 
-                <a href="#" id="past-surveys" class="bg-slate-50 hover:bg-sky-700 hover:text-zinc-300 m-4 w-1/2 rounded-md p-4 hover:shadow-lg hover:cursor-pointer text-center">
+                <!-- <a href="#" id="past-surveys" class="bg-slate-50 hover:bg-sky-700 hover:text-zinc-300 m-4 w-1/2 rounded-md p-4 hover:shadow-lg hover:cursor-pointer text-center">
                     <div class="">
                         Check your Past Surveys
                     </div>
@@ -32,16 +40,16 @@
                     <div>
                         Right to be forgotten
                     </div>
-                </a>
+                </a> -->
     
-                <div class="mt-6 flex justify-center">
+                <!-- <div class="mt-6 flex justify-center">
                     <span id="logout" class="bg-slate-50 rounded-md p-4 shadow-lg hover:cursor-pointer hover:bg-sky-700 hover:text-zinc-300">
                         Logout
                     </span>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
-    <script src="account.js"></script>
+    <script src="results.js"></script>
 </body>
 </html>

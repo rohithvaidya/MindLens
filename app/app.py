@@ -4,18 +4,38 @@ import json
 import pandas as pd
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
+from flask_socketio import SocketIO
 import requests
 
+from openai import OpenAI
+
+from kedro.framework.context import KedroContext
+from kedro.framework.session import KedroSession
+from kedro.framework.startup import bootstrap_project
+from kedro.io import DataCatalog
+from kedro.framework.project import find_pipelines
+
+import time
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
 mlflow_url = "http://127.0.0.1:8001/invocations"
+client = OpenAI(
+    api_key=os.environ.get("OPENAI_API_KEY"),  # This is the default and can be omitted
+)
 
 app = Flask(__name__)
 CORS(
     app, origins=["http://localhost:4869", "http://127.0.0.1:4869", "*"]
-)  # Enable CORS for all routes
+)
+socketio = SocketIO(app, cors_allowed_origins=["http://localhost:4869", "http://127.0.0.1:4869", "*"])
+# CORS(
+#     app, origins=["http://localhost:4869", "http://127.0.0.1:4869", "*"]
+# )  # Enable CORS for all routes
 
-STATIC_DIR = "static"
-USERS_CSV_FILE = "users.csv"
-USERS_CSV_PATH = os.path.join(STATIC_DIR, USERS_CSV_FILE)
+USER_DATA_CATALOG_NAME = 'survey_inputs_log'
 USERS_COLUMNS = [
     "id",
     "Name",
@@ -39,6 +59,14 @@ USERS_COLUMNS = [
     "Depression",
 ]
 
+project = bootstrap_project("../")
+KEDRO_PROJECT_PATH = project.project_path
+KEDRO_ENV =  "local" # or the appropriate environment for your catalog
+KEDRO_SESSION = KedroSession.create(project_path=KEDRO_PROJECT_PATH, env=KEDRO_ENV)
+KEDRO_CONTEXT: KedroContext = KEDRO_SESSION.load_context()
+KEDRO_CATALOG: DataCatalog = KEDRO_CONTEXT.catalog
+pipelines = find_pipelines()
+
 
 @app.route("/login", methods=["POST"])
 @cross_origin()
@@ -50,12 +78,13 @@ def login():
     print(data)
     # Extract the ID from the JSON data
     user_name = data.get("name")
+    print(data.get("id"))
     user_id = int(data.get("id"))
 
     print("user_name: ", user_name)
     print("user_id: ", user_id)
 
-    user_df = pd.read_csv(USERS_CSV_PATH)
+    user_df = KEDRO_CATALOG.load(USER_DATA_CATALOG_NAME)
 
     print(user_df[user_df["id"] == user_id]["Name"] == user_name)
 
@@ -73,11 +102,9 @@ def login():
         print("3rd")
         return jsonify({"message": "ID or Name is wrong", "success": False})
 
-
 # Utility function to generate a random 6-digit ID
 def generate_random_id():
     return str(random.randint(100000, 999999))
-
 
 # API endpoint for user registration
 @app.route("/register", methods=["POST"])
@@ -90,7 +117,7 @@ def register_user():
     if not user_name:
         return jsonify({"error": "Name is required"}), 400
 
-    user_df = pd.read_csv(USERS_CSV_PATH)
+    user_df = KEDRO_CATALOG.load(USER_DATA_CATALOG_NAME)
 
     try:
         while True:
@@ -105,7 +132,7 @@ def register_user():
                 for col in USERS_COLUMNS[2:]:
                     new_user[col] = pd.NA
                 user_df = pd.concat([user_df, pd.DataFrame([new_user])])
-                user_df.to_csv(USERS_CSV_PATH, index=False)
+                KEDRO_CATALOG.save(USER_DATA_CATALOG_NAME, user_df)
                 break
     except Exception as e:
         return jsonify({"error": "Failed to save user data", "details": str(e)}), 500
@@ -128,11 +155,9 @@ def submit_survey():
     # Get the user's name from the request
     data = request.get_json()
 
-    user_df = pd.read_csv(USERS_CSV_PATH)
+    user_df = KEDRO_CATALOG.load(USER_DATA_CATALOG_NAME)
 
     location = user_df.loc[user_df["id"] == int(data["id"])].index[0]
-
-    print("location: ", location)
 
     userid = data["id"]
     username = data["Name"]
@@ -143,13 +168,14 @@ def submit_survey():
     for k, v in data.items():
         user_df.at[location, k] = v
 
-    user_df.to_csv(USERS_CSV_PATH, index=False)
+    KEDRO_CATALOG.save(USER_DATA_CATALOG_NAME, user_df)
 
     print(data)
     return jsonify({"message": "data_received", "success": True}), 201
 
 
 @app.route("/right_to_erase")
+@cross_origin()
 def right_to_erasure():
     
     data = request.get_json()
@@ -180,17 +206,132 @@ def update_predictions():
         # Get the predicted value (assuming it's in the JSON response)
     y_pred = ml_flow_response.json()
     print(y_pred)
+    
+
+# function to send the message to ChatGPT
+def send_to_chatgpt(message):
+    try:
+        
+        chat_completion = client.chat.completions.create(
+            messages=[
+                    {
+                        "role": "system",
+                        "content": "You are an assistant that helps analyze and explain feature contributions that tell whether the person has Depression or not.",
+                    },
+                    {
+                        "role": "user",
+                        "content": message
+                    }
+                ],
+                model="gpt-4o",
+            )
+        return chat_completion.choices[0].message.content
+    except Exception as e:
+        return f"An error occurred: {e}"
+    
+
+@app.route("/run_pipeline", methods=["POST"])
+@cross_origin()
+def run_pipeline():
+    data = request.get_json()
+    
+    print(data)
+    
+    username = data['username']
+    userid = int(data['userid'])
+    
+    socketio.emit("data_processing_start", {"success":True})    
+    with KedroSession.create(project_path=KEDRO_PROJECT_PATH, env=KEDRO_ENV) as SESSION:
+    
+        SESSION.run(pipeline_name='data_processing', 
+                      node_names =["preprocess_user_predictions_log_node"], 
+                      from_inputs=["dataset", USER_DATA_CATALOG_NAME], 
+                      to_outputs=["user_accounts_predictions_log"])
+    time.sleep(2)
+    
+    user_df = KEDRO_CATALOG.load("user_accounts_predictions_log")
+    
+    x_pred = user_df.loc[user_df['id']==userid].drop(columns=["id", "Name", "City", "Depression"])
+    
+    x_pred = x_pred.values[0].tolist()
+    
+    data = {
+        "instances": [x_pred]
+    }
+    
+    socketio.emit("inference_start", {"success":True})
+    
+    ml_flow_response = requests.post(
+        mlflow_url,
+        headers={"Content-Type": "application/json"},
+        data=json.dumps(data),  # Assuming x_pred is JSON string
+    )
+    
+    prediction = ml_flow_response.json()['predictions'][0]
+    user_df = KEDRO_CATALOG.load("user_accounts_predictions_log")
+    user_df.loc[user_df['id']==userid]['Depression'] = int(prediction)
+    
+    prediction_mapped = 'Yes' if bool(prediction) else 'No'
+    
+    time.sleep(2)
+    
+    socketio.emit("interpretation_start", {"success":True})
+    
+    print("This is fine")    
+    with KedroSession.create(project_path=KEDRO_PROJECT_PATH, env=KEDRO_ENV, extra_params={"userid": userid}) as SESSION:
+        print("This is also fine")    
+        
+        SESSION.run(pipeline_name='model_xplain', 
+                      node_names =["xplain_model_prediction"], 
+                      from_inputs=["sklearn_model", "user_accounts_predictions_log", "params:userid"], 
+                      to_outputs=["shap_instance_features_to_prediction", "shap_instance_features_away_prediction"])
+    
+    features_to_predicted_label = KEDRO_CATALOG.load("shap_instance_features_to_prediction")
+    features_away_predicted_label = KEDRO_CATALOG.load("shap_instance_features_away_prediction")
+    
+    print("features_to_predicted_label: ", features_to_predicted_label)
+    print("features_away_predicted_label: ", features_away_predicted_label)
+    
+    # Generate the strings
+    to_contribution_strings = [
+        f'"{row["name"]}" contributes {row["contribution"]:.6f} towards "{prediction_mapped}" Depression'
+        for _, row in features_to_predicted_label.iterrows()
+    ]
+    
+    away_contribution_strings = [
+        f'"{row["name"]}" contributes {row["contribution"]:.6f} away from "{prediction_mapped}" Depression'
+        for _, row in features_away_predicted_label.iterrows()
+    ]
+    
+    to_contribution_strings = "\n".join(to_contribution_strings)
+    away_contribution_strings = "\n".join(away_contribution_strings)
+    
+    # print("to_contribution_strings: ", to_contribution_strings)
+    # print("away_contribution_strings: ", away_contribution_strings)
+    
+    message = "Use the given data and interpret in human language what the concerned person should work/focus on to help with his depression. Be positive, empathetic and reassuring. Start with the things that take him away depression and then then address the things that are contributing to his mental stress and how he can work on it. Be like a professional and don't ask anything else. Don't write huge paragraphs. Be very succint as well. Not more than 200 words."
+    
+    prompt = "\n".join([to_contribution_strings, away_contribution_strings, message])
+    
+    print("prompt: ", prompt)
+    
+    interpretation = send_to_chatgpt(prompt)
+    
+    print(interpretation)
+    socketio.emit("all_done", {"success":True})
+    
+    return jsonify(
+            {
+                "message": "Pipeline Successful",
+                "success": True,
+                "name": username,
+                "id": userid,
+                "prediction": prediction_mapped,
+                "interpretation": interpretation
+            }
+        )
+    
 
 if __name__ == "__main__":
-    if not os.path.exists(USERS_CSV_PATH):
-        with open(USERS_CSV_PATH, mode="w+", newline="", encoding="utf-8") as csvfile:
-            csvfile.writelines(",".join(USERS_COLUMNS))
 
-    if os.stat(USERS_CSV_PATH).st_size == 0:
-        print("USERS.CSV IS EMPTY")
-        with open(USERS_CSV_PATH, mode="w+", newline="", encoding="utf-8") as csvfile:
-            csvfile.writelines(",".join(USERS_COLUMNS))
-    else:
-        print("USERS.CSV IS NOT EMPTY")
-
-    app.run(debug=True)
+    socketio.run(app, debug=True, port=5000)

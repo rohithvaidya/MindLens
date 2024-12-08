@@ -77,15 +77,16 @@ def preprocess_dataset(dataset: pd.DataFrame) -> pd.DataFrame:
 
 
 def preprocess_user_predictions_log(dataset: pd.DataFrame, survey_inputs_log: pd.DataFrame) -> pd.DataFrame:
-     
+    
     training_dataset = dataset
     test_dataset = survey_inputs_log
     
-   # Remove cities with less than 5 depressed people from the training dataset
+    # Remove cities with less than 5 depressed people from the training dataset
     unique_cities = training_dataset["City"].unique()
     city_counts = training_dataset[training_dataset["Depression"] == 1.0]["City"].value_counts()
     cities_to_keep = city_counts[city_counts >= 5].index
     test_dataset = test_dataset[test_dataset["City"].isin(cities_to_keep)]
+    print("test_dataset: ", test_dataset)
     
     # Clean the "Profession" feature
     top_professions = training_dataset["Profession"].value_counts()[1:35].index.tolist()

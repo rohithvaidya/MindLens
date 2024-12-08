@@ -55,6 +55,14 @@ pred_drift:
   filepath: data/07_model_output/pred_drift.json
   versioned: True
 
+shap_instance_features_to_prediction:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/shap_instance_features_to_prediction.json
+
+shap_instance_features_away_prediction:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/shap_instance_features_away_prediction.json
+
 
 dummy_confusion_matrix:
   type: matplotlib.MatplotlibWriter
@@ -161,14 +169,8 @@ depression_synthetic_cleaned:
 
 user_accounts_predictions_log:
   type: pandas.CSVDataset
-  filepath: data/user_accounts_predictions_log.csv
+  filepath: data/05_model_input/user_accounts_predictions_log.csv
 
 survey_inputs_log:
   type: pandas.CSVDataset
-  filepath: data/survey_inputs_log.csv
-
-
-current_run_id:
-  type: json.JSONDataset
-  filepath: data/07_model_output/run_id
-  versioned: True
+  filepath: data/01_raw/survey_inputs_log.csv

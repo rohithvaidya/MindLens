@@ -1,28 +1,4 @@
-Downloading artifacts:   0%|          | 0/5 [00:00<?, ?it/s]Downloading artifacts:  20%|##        | 1/5 [00:00<?, ?it/s]Downloading artifacts:  40%|####      | 2/5 [00:00<?, ?it/s]Downloading artifacts:  60%|######    | 3/5 [00:00<?, ?it/s]Downloading artifacts:  80%|########  | 4/5 [00:00<00:00, 4018.49it/s]Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 5023.12it/s]Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 5023.12it/s]
-2024/12/07 23:09:26 INFO mlflow.models.flavor_backend_registry: Selected backend for flavor 'python_function'
-2024/12/07 23:09:26 INFO mlflow.pyfunc.backend: === Running command 'waitress-serve --host=127.0.0.1 --port=8001 --ident=mlflow mlflow.pyfunc.scoring_server.wsgi:app'
+Downloading artifacts:   0%|          | 0/5 [00:00<?, ?it/s]Downloading artifacts:  20%|##        | 1/5 [00:00<?, ?it/s]Downloading artifacts:  40%|####      | 2/5 [00:00<?, ?it/s]Downloading artifacts:  60%|######    | 3/5 [00:00<?, ?it/s]Downloading artifacts:  80%|########  | 4/5 [00:00<?, ?it/s]Downloading artifacts: 100%|##########| 5/5 [00:00<?, ?it/s]Downloading artifacts: 100%|##########| 5/5 [00:00<?, ?it/s]
+2024/12/08 15:28:32 INFO mlflow.models.flavor_backend_registry: Selected backend for flavor 'python_function'
+2024/12/08 15:28:32 INFO mlflow.pyfunc.backend: === Running command 'waitress-serve --host=127.0.0.1 --port=8001 --ident=mlflow mlflow.pyfunc.scoring_server.wsgi:app'
 INFO:waitress:Serving on http://127.0.0.1:8001
-Traceback (most recent call last):
-  File "C:\Python310\lib\runpy.py", line 196, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "C:\Python310\lib\runpy.py", line 86, in _run_code
-    exec(code, run_globals)
-  File "C:\Python310\Scripts\mlflow.exe\__main__.py", line 7, in <module>
-    sys.exit(cli())
-  File "C:\Python310\lib\site-packages\click\core.py", line 1130, in __call__
-    return self.main(*args, **kwargs)
-  File "C:\Python310\lib\site-packages\click\core.py", line 1055, in main
-    rv = self.invoke(ctx)
-  File "C:\Python310\lib\site-packages\click\core.py", line 1657, in invoke
-    return _process_result(sub_ctx.command.invoke(sub_ctx))
-  File "C:\Python310\lib\site-packages\click\core.py", line 1657, in invoke
-    return _process_result(sub_ctx.command.invoke(sub_ctx))
-  File "C:\Python310\lib\site-packages\click\core.py", line 1404, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "C:\Python310\lib\site-packages\click\core.py", line 760, in invoke
-    return __callback(*args, **kwargs)
-  File "C:\Python310\lib\site-packages\mlflow\models\cli.py", line 103, in serve
-    return get_flavor_backend(
-  File "C:\Python310\lib\site-packages\mlflow\pyfunc\backend.py", line 309, in serve
-    raise Exception(
-Exception: Command 'waitress-serve --host=127.0.0.1 --port=8001 --ident=mlflow mlflow.pyfunc.scoring_server.wsgi:app' returned non zero return code. Return code = 15
