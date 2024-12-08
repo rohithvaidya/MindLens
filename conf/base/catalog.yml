@@ -166,3 +166,9 @@ user_accounts_predictions_log:
 survey_inputs_log:
   type: pandas.CSVDataset
   filepath: data/survey_inputs_log.csv
+
+
+current_run_id:
+  type: json.JSONDataset
+  filepath: data/07_model_output/run_id
+  versioned: True
