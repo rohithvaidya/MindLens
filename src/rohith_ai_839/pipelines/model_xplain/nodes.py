@@ -7,8 +7,12 @@ import pandas as pd
 def xplain_model_prediction(sklearn_model, user_df, userid):
     
     x_pred = user_df.loc[user_df['id']==userid].drop(columns=["id", "Name", "City", "Depression"])
-    
+
+    if(x_pred.empty):
+        x_pred = user_df.iloc[[-1]].drop(columns=["id", "Name", "City", "Depression"])
+   
     explainer = shap.TreeExplainer(sklearn_model)
+    print(x_pred)
     shap_values = explainer(x_pred)
     
     print("shap_values: ", shap_values)

@@ -1,8 +1,7 @@
 import json
 import os
-
-import matplotlib.pyplot as plt
 import shap
+import matplotlib.pyplot as plt
 from evidently.metrics import *
 from evidently.tests import *
 

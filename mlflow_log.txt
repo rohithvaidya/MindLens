@@ -1,4 +1,4 @@
-Downloading artifacts:   0%|          | 0/5 [00:00<?, ?it/s]Downloading artifacts:  20%|##        | 1/5 [00:00<?, ?it/s]Downloading artifacts:  40%|####      | 2/5 [00:00<?, ?it/s]Downloading artifacts:  60%|######    | 3/5 [00:00<?, ?it/s]Downloading artifacts:  80%|########  | 4/5 [00:00<?, ?it/s]Downloading artifacts: 100%|##########| 5/5 [00:00<?, ?it/s]Downloading artifacts: 100%|##########| 5/5 [00:00<?, ?it/s]
-2024/12/08 15:28:32 INFO mlflow.models.flavor_backend_registry: Selected backend for flavor 'python_function'
-2024/12/08 15:28:32 INFO mlflow.pyfunc.backend: === Running command 'waitress-serve --host=127.0.0.1 --port=8001 --ident=mlflow mlflow.pyfunc.scoring_server.wsgi:app'
+Downloading artifacts:   0%|          | 0/5 [00:00<?, ?it/s]Downloading artifacts:  20%|##        | 1/5 [00:00<00:00, 998.64it/s]Downloading artifacts:  40%|####      | 2/5 [00:00<00:00, 1997.29it/s]Downloading artifacts:  60%|######    | 3/5 [00:00<00:00, 2995.93it/s]Downloading artifacts:  80%|########  | 4/5 [00:00<00:00, 3994.58it/s]Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 4993.22it/s]Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 2493.34it/s]
+2024/12/11 19:26:34 INFO mlflow.models.flavor_backend_registry: Selected backend for flavor 'python_function'
+2024/12/11 19:26:34 INFO mlflow.pyfunc.backend: === Running command 'waitress-serve --host=127.0.0.1 --port=8001 --ident=mlflow mlflow.pyfunc.scoring_server.wsgi:app'
 INFO:waitress:Serving on http://127.0.0.1:8001

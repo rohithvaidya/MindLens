@@ -174,24 +174,24 @@ def submit_survey():
     return jsonify({"message": "data_received", "success": True}), 201
 
 
-@app.route("/right_to_erase")
+##TBD 
+@app.route("/right_to_erase", methods=["POST"])
 @cross_origin()
 def right_to_erasure():
     
     data = request.get_json()
 
-    # Removing info from source dataset
-    df = pd.read_csv("../data/01_raw/depression_synthetic.csv")
-    df = df[
-        ~(df['Name'] == data["Name"])
-    ]
-    df.to_csv("../data/01_raw/depression_synthetic.csv")
+    df = KEDRO_CATALOG.load("dataset")
 
-    # Running complete training after change in dataset
+    df = df[df['id'] != data["id"]]
+
+    KEDRO_CATALOG.save("dataset", df)
+
+    os.chdir("..")
+    os.system("python .\utils\kill_port.py")
     os.system("kedro run")
 
-    response = {"message": "Your personal data has been removed and the model has been retrained!"}
-    return jsonify(response), 200
+    return jsonify({"message": "Removed your personal data from the model", "success": True}), 201
 
 @app.route("/update_predictions")
 def update_predictions():
