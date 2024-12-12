@@ -269,7 +269,9 @@ def run_pipeline():
     
     prediction = ml_flow_response.json()['predictions'][0]
     user_df = KEDRO_CATALOG.load("user_accounts_predictions_log")
-    user_df.loc[user_df['id']==userid]['Depression'] = int(prediction)
+    user_df.loc[user_df['id']==userid, 'Depression'] = int(prediction)
+    print(user_df)
+    KEDRO_CATALOG.save("user_accounts_predictions_log", user_df)
     
     prediction_mapped = 'Yes' if bool(prediction) else 'No'
     
