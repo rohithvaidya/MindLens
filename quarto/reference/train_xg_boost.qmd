@@ -1,0 +1,12 @@
+# train_xg_boost { #nodes.train_xg_boost }
+
+`train_xg_boost(X_train, y_train)`
+
+Trains the Decision Tree model.
+
+Args:
+    X_train: Training data of independent features.
+    y_train: Training data for target decision.
+
+Returns:
+    Trained model.

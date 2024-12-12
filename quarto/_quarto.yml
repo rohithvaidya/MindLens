@@ -12,42 +12,47 @@ quartodoc:
   #source_dir: E:/Lab Files/Repos/rohith-ai-839/src/rohith_ai_839/pipelines/data_science/
   source_dir: ../src/rohith_ai_839/pipelines/data_science/
   sections:
-    - title: ML Stagewise Documentation
+    - title: Module docs - ML
       desc: Modeling Stage
       package: sklearn.linear_model
       contents: 
         # the functions being documented in the package.
         # you can refer to anything: class methods, modules, etc..
         - LogisticRegression
-    - title: ML Stagewise Documentation
-      desc: Drfit Stage
+    - title: Module docs - Drift
+      desc: Drift Stage
       package: evidently.metric_preset
       contents: 
         # the functions being documented in the package.
         # you can refer to anything: class methods, modules, etc..
         - DataDriftPreset
 
-    - title: ML Stagewise Documentation 
-      desc: Nodes
+    - title: Mlops node documentation
+      desc: Functionalities in the MLOps workflow
       package: nodes
       contents: 
         # the functions being documented in the package.
         # you can refer to anything: class methods, modules, etc..
         - split_data
-        - train_model
+        - train_logistic_regression
+        - train_random_forest
+        - train_decision_tree
+        - train_xg_boost
+        - evaluate_all_models
         - quality_drift_check
-        - evaluate_model
         - prediction_drift_check
         - plot_and_save
         - report_plotly
 
 website:
-  title: "AI 839 - ML Project"
+  title: "MindLens - Technical Documentation"
+  sidebar:
+    position: left    # can be 'left' or 'right'
+    collapse: false
   navbar:
-    left:
+    right:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: About App
 
 format:
   html:

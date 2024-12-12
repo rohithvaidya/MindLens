@@ -152,12 +152,39 @@ def evaluate_all_models(
     X_test: pd.DataFrame,
     y_test: pd.Series,
 ) -> pd.Series:
-    """Calculates and logs the coefficient of determination.
+    """
+    Evaluates multiple machine learning models on test data and selects the best model based on the F1 score.
+
+    This function calculates the accuracy, precision, recall, and F1 score for each provided model. 
+    It logs the performance metrics and determines the best model based on the highest F1 score. 
+    Additionally, it returns the predictions, metrics, and the selected model.
 
     Args:
-        regressor: Trained model.
-        X_test: Testing data of independent features.
-        y_test: Testing data for target decision.
+        regressor_logistic_regression: Trained Logistic Regression model.
+        regressor_random_forest: Trained Random Forest model.
+        regressor_xg_boost: Trained XGBoost model.
+        regressor_decision_tree: Trained Decision Tree model.
+        X_test (pd.DataFrame): Test dataset features.
+        y_test (pd.Series): Test dataset target labels.
+
+    Returns:
+        Tuple:
+            - y_pred (np.ndarray): Predictions from the best-performing model.
+            - metrics (dict): A dictionary of evaluation metrics for the selected model:
+                - "value_1": Accuracy score.
+                - "value_2": Precision score.
+                - "value_3": Recall score.
+                - "value_4": F1 score.
+            - regressor: The best-performing model object.
+            - regressor: Duplicate reference to the best-performing model object for consistency.
+
+    Logs:
+        - The accuracy, precision, recall, and F1 score for each model.
+        - The algorithm name of the selected best model.
+
+    Notes:
+        - The function assumes all models implement the `predict` method.
+        - The `y_test` must be binary for the `precision_score`, `recall_score`, and `f1_score` metrics to work correctly.
     """
     metrics = {}
 

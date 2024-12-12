@@ -1,10 +1,12 @@
 const warningMsg = document.getElementById('warning-msg')
 document.getElementById("login-form").addEventListener("submit", async function (event) {
+    
     event.preventDefault(); // Prevent the default form submission
 
     // Get the user-entered ID from the form
     const userId = parseInt(document.getElementById("id").value);
     const userName = document.getElementById("name").value;
+
 
     // Send the ID to the server via a POST request
     try {

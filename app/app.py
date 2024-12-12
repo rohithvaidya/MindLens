@@ -23,7 +23,7 @@ load_dotenv()
 
 mlflow_url = "http://127.0.0.1:8001/invocations"
 client = OpenAI(
-    api_key=os.environ.get("OPENAI_API_KEY"),  # This is the default and can be omitted
+    api_key="",  # This is the default and can be omitted
 )
 
 app = Flask(__name__)
@@ -188,7 +188,7 @@ def right_to_erasure():
     KEDRO_CATALOG.save("dataset", df)
 
     os.chdir("..")
-    os.system("python .\utils\kill_port.py")
+    #os.system("python .\utils\kill_port.py")
     os.system("kedro run")
 
     return jsonify({"message": "Removed your personal data from the model", "success": True}), 201
@@ -334,4 +334,4 @@ def run_pipeline():
 
 if __name__ == "__main__":
 
-    socketio.run(app, debug=True, port=5000)
+    socketio.run(app,port=5000)

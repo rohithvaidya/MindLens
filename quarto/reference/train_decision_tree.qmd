@@ -1,0 +1,12 @@
+# train_decision_tree { #nodes.train_decision_tree }
+
+`train_decision_tree(X_train, y_train)`
+
+Trains the Decision Tree model.
+
+Args:
+    X_train: Training data of independent features.
+    y_train: Training data for target decision.
+
+Returns:
+    Trained model.

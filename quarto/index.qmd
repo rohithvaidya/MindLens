@@ -1,7 +1,13 @@
 ---
-title: "quarto"
+title: "Introduction to MindLens"
 ---
 
-This is a Quarto website.
+Empowering Mental Well-Being Through Technology
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+In today's fast-paced world, mental health challenges such as stress and depression are increasingly prevalent. Addressing these challenges requires proactive tools that empower individuals to understand and improve their mental well-being. This is where MindLens steps in—an innovative mental health screening app designed to provide users with personalized insights and actionable guidance.
+
+At its core, MindLens combines the power of technology and mental health expertise. The app begins by guiding participants through a comprehensive survey that assesses their stress levels and emotional state. Using advanced machine learning algorithms, MindLens analyzes the responses to determine whether the user may be experiencing signs of depression.
+
+But MindLens doesn’t stop at detection. It goes a step further by offering users detailed, easy-to-understand explanations of their results, highlighting specific areas where they can make improvements. Whether it’s suggesting stress-management techniques, encouraging lifestyle adjustments, or recommending professional consultation, MindLens equips users with the tools they need to take control of their mental health.
+
+By bridging the gap between mental health awareness and actionable solutions, MindLens aspires to make mental well-being accessible, understandable, and achievable for everyone.

@@ -10,9 +10,11 @@ website:
       section: ML Stagewise Documentation
     - contents:
       - reference/split_data.qmd
-      - reference/train_model.qmd
+      - reference/train_logistic_regression.qmd
+      - reference/train_random_forest.qmd
+      - reference/train_decision_tree.qmd
+      - reference/train_xg_boost.qmd
       - reference/quality_drift_check.qmd
-      - reference/evaluate_model.qmd
       - reference/prediction_drift_check.qmd
       - reference/plot_and_save.qmd
       - reference/report_plotly.qmd

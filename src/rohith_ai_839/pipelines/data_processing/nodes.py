@@ -4,15 +4,42 @@ from sklearn.preprocessing import LabelEncoder
 
 
 def preprocess_dataset(dataset: pd.DataFrame) -> pd.DataFrame:
+    """
+    Preprocesses the input dataset by performing a series of cleaning and transformation steps to prepare it for analysis or modeling.
+
+    The preprocessing steps include:
+    1. Removing the "id" column.
+    2. Filtering out cities with fewer than 5 cases of depression.
+    3. Cleaning and grouping categorical variables:
+        - "Profession": Grouping less frequent professions into an "Other" category.
+        - "Sleep Duration": Categorizing uncommon sleep durations into "1-8".
+        - "Dietary Habits": Grouping rare dietary habits into a "Moderate" category.
+        - "Degree": Consolidating less frequent degrees into an "Other" category.
+    4. Filling missing values with zero.
+    5. Encoding categorical variables using `LabelEncoder`.
+    6. Renaming the column "Have you ever had suicidal thoughts ?" to "suicidal_thoughts".
+
+    Args:
+        dataset (pd.DataFrame): The input dataset containing survey data. 
+            Must include the following columns:
+            - "id"
+            - "City"
+            - "Profession"
+            - "Sleep Duration"
+            - "Dietary Habits"
+            - "Degree"
+            - "Have you ever had suicidal thoughts ?"
+            - "Depression" (binary, 0 or 1)
+
+    Returns:
+        pd.DataFrame: The preprocessed dataset ready for further analysis or modeling.
+
+    Note:
+        - Ensure that the input dataset has all required columns before calling this function.
+        - The function modifies categorical variables to handle sparsity and reduce dimensionality.
+    """
     # Removing ID column
     dataset = dataset.drop(["id"], axis=1)
-
-    """We have to clean the columns 
-    City
-    Profession
-    Sleep Duration
-    Dietary Habits
-    Degree """
 
     # Removing cities which have less than 5 depressed people
     unique_cities = dataset["City"].unique()
@@ -77,16 +104,52 @@ def preprocess_dataset(dataset: pd.DataFrame) -> pd.DataFrame:
 
 
 def preprocess_user_predictions_log(dataset: pd.DataFrame, survey_inputs_log: pd.DataFrame) -> pd.DataFrame:
+    """
+    Preprocesses user prediction logs by aligning the survey inputs with the characteristics of the training dataset.
+
+    This function cleans and transforms the input `survey_inputs_log` dataset based on the distribution and properties of the training `dataset`. 
+    The preprocessing steps ensure consistency between the datasets for predictions.
+
+    Steps performed:
+    1. Filters cities in `survey_inputs_log` that are not present in the training dataset with at least 5 depressed cases.
+    2. Standardizes categorical variables in `survey_inputs_log`:
+        - "Profession": Keeps only the top 35 professions from the training dataset; others are grouped into "Other."
+        - "Sleep Duration": Retains top 4 durations from the training dataset; others are grouped into "1-8."
+        - "Dietary Habits": Keeps the top 3 habits from the training dataset; others are grouped into "Moderate."
+        - "Degree": Retains the top 27 degrees from the training dataset; others are grouped into "Other."
+    3. Fills missing values in all columns except "Depression" with zeros.
+    4. Applies `LabelEncoder` to all categorical columns in `survey_inputs_log`.
+    5. Renames the column "Have you ever had suicidal thoughts ?" to "suicidal_thoughts."
+
+    Args:
+        dataset (pd.DataFrame): The training dataset used as a reference for preprocessing.
+            Must include the following columns:
+            - "City"
+            - "Profession"
+            - "Sleep Duration"
+            - "Dietary Habits"
+            - "Degree"
+            - "Depression" (binary, 0 or 1)
+        survey_inputs_log (pd.DataFrame): The dataset containing new survey inputs for prediction.
+            Should have similar column structure to `dataset`.
+
+    Returns:
+        pd.DataFrame: The cleaned and transformed `survey_inputs_log` dataset ready for predictions.
+
+    Note:
+        - The function aligns the distribution of categorical features in `survey_inputs_log` with `dataset`.
+        - Ensure `survey_inputs_log` has the required columns before calling this function.
+        - The "Depression" column in `survey_inputs_log` (if present) is not used during preprocessing.
+    """
     
     training_dataset = dataset
     test_dataset = survey_inputs_log
-    
-    # Remove cities with less than 5 depressed people from the training dataset
+
+   # Remove cities with less than 5 depressed people from the training dataset
     unique_cities = training_dataset["City"].unique()
     city_counts = training_dataset[training_dataset["Depression"] == 1.0]["City"].value_counts()
     cities_to_keep = city_counts[city_counts >= 5].index
     test_dataset = test_dataset[test_dataset["City"].isin(cities_to_keep)]
-    print("test_dataset: ", test_dataset)
     
     # Clean the "Profession" feature
     top_professions = training_dataset["Profession"].value_counts()[1:35].index.tolist()
@@ -113,7 +176,7 @@ def preprocess_user_predictions_log(dataset: pd.DataFrame, survey_inputs_log: pd
     )
     
     # Fill missing values
-    test_dataset = test_dataset.fillna(0)
+    test_dataset.loc[:, test_dataset.columns != "Depression"] = test_dataset.loc[:, test_dataset.columns != "Depression"].fillna(0)
     
     # Label encoding for object columns
     object_cols = [col for col in test_dataset.columns if test_dataset[col].dtype == "object"]
