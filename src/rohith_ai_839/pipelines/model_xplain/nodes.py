@@ -3,6 +3,7 @@ import os
 import matplotlib.pyplot as plt
 import shap
 import pandas as pd
+from mapie.classification import MapieClassifier
 
 def xplain_model_prediction(sklearn_model, user_df, userid):
     """
@@ -83,3 +84,25 @@ def xplain_model_prediction(sklearn_model, user_df, userid):
     features_away_predicted_label = waterfall_df.nsmallest(columns='contribution', n=2)
     
     return features_to_predicted_label, features_away_predicted_label
+
+def prediction_confidence(user_df, userid, model_selection_name, conformal_logistic_regression, conformal_random_forest, conformal_xg_boost, conformal_decision_tree):
+    model = model_selection_name["model"]
+    if model == "logistic_regression":
+        regressor = conformal_logistic_regression
+    elif model == "decision_tree":
+        regressor = conformal_decision_tree
+    elif model == "random_forest":
+        regressor = conformal_random_forest
+    elif model == "xg_boost":
+        regressor = conformal_xg_boost
+
+    x_pred = user_df.loc[user_df['id']==userid].drop(columns=["id", "Name", "City", "Depression"])
+
+    if(x_pred.empty):
+        x_pred = user_df.iloc[[-1]].drop(columns=["id", "Name", "City", "Depression"])
+
+    y_pred_conf, y_conf_interval = regressor.predict(x_pred, alpha=0.1) #90% confidence
+
+    print((json.dumps({"y_pred_conf_interval":str(y_conf_interval)})))
+
+    return json.dumps({"y_pred_conf_interval":str(y_conf_interval)})

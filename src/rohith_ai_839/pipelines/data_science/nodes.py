@@ -15,6 +15,8 @@ from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_sc
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from xgboost import XGBClassifier
+from mapie.classification import MapieClassifier
+
 
 
 def split_data(data: pd.DataFrame, parameters: Dict) -> Tuple:
@@ -46,11 +48,12 @@ def train_logistic_regression(
     Returns:
         Trained model.
     """
-    regressor = LogisticRegression(penalty="l2", C=0.01)
+    regressor = LogisticRegression(penalty="l2", C=0.01, max_iter=1000)
+    mapie = MapieClassifier(regressor, method="score")
     regressor.fit(X_train, y_train)
-    sklearn_model = regressor
+    mapie.fit(X_train, y_train)
 
-    return regressor
+    return regressor, mapie
 
 
 def train_random_forest(X_train: pd.DataFrame, y_train: pd.Series):
@@ -64,10 +67,11 @@ def train_random_forest(X_train: pd.DataFrame, y_train: pd.Series):
         Trained model.
     """
     regressor = RandomForestClassifier(random_state=42)
+    mapie = MapieClassifier(regressor, method="score")
     regressor.fit(X_train, y_train)
-    sklearn_model = regressor
+    mapie.fit(X_train, y_train)
 
-    return regressor
+    return regressor, mapie
 
 
 def train_decision_tree(
@@ -84,10 +88,11 @@ def train_decision_tree(
     """
 
     regressor = DecisionTreeClassifier(max_depth=10, random_state=42)
+    mapie = MapieClassifier(regressor, method="score")
     regressor.fit(X_train, y_train)
-    sklearn_model = regressor
+    mapie.fit(X_train, y_train)
 
-    return regressor
+    return regressor, mapie
 
 
 def train_xg_boost(X_train: pd.DataFrame, y_train: pd.Series):
@@ -102,10 +107,12 @@ def train_xg_boost(X_train: pd.DataFrame, y_train: pd.Series):
     """
 
     regressor = XGBClassifier(random_state=42)
+    mapie = MapieClassifier(regressor, method="score")
     regressor.fit(X_train, y_train)
-    sklearn_model = regressor
+    mapie.fit(X_train, y_train)
 
-    return regressor
+    return regressor, mapie
+
 
 
 def quality_drift_check(
@@ -227,6 +234,7 @@ def evaluate_all_models(
     metrics["xg_boost"] = [score, precision, recall, f1, y_pred]
 
     y_pred = regressor_decision_tree.predict(X_test)
+    
     score = accuracy_score(y_test, y_pred)
     precision = precision_score(y_test, y_pred)
     recall = recall_score(y_test, y_pred)
@@ -264,7 +272,7 @@ def evaluate_all_models(
 
     metrics = {f"value_{i+1}": value for i, value in enumerate(metrics[model])}
 
-    return y_pred, metrics, regressor, regressor
+    return y_pred, metrics, regressor, regressor, {"model":model}
 
 
 def prediction_drift_check(y_test: pd.Series, y_pred: pd.Series):

@@ -25,25 +25,25 @@ def create_pipeline(**kwargs) -> Pipeline:
             node(
                 func=train_logistic_regression,
                 inputs=["X_train", "y_train"],
-                outputs="regressor_logistic_regression",
+                outputs=["regressor_logistic_regression", "conformal_logistic_regression"],
                 name="train_model_node_logistic_regression",
             ),
             node(
                 func=train_random_forest,
                 inputs=["X_train", "y_train"],
-                outputs="regressor_random_forest",
+                outputs=["regressor_random_forest", "conformal_random_forest"],
                 name="train_model_node_random_forest",
             ),
             node(
                 func=train_xg_boost,
                 inputs=["X_train", "y_train"],
-                outputs="regressor_xg_boost",
+                outputs=["regressor_xg_boost", "conformal_xg_boost"],
                 name="train_model_node_xg_boost",
             ),
             node(
                 func=train_decision_tree,
                 inputs=["X_train", "y_train"],
-                outputs="regressor_decision_tree",
+                outputs=["regressor_decision_tree", "conformal_decision_tree"],
                 name="train_model_node_decision_tree",
             ),
             node(
@@ -54,9 +54,9 @@ def create_pipeline(**kwargs) -> Pipeline:
                     "regressor_xg_boost",
                     "regressor_random_forest",
                     "X_test",
-                    "y_test",
+                    "y_test"
                 ],
-                outputs=["y_pred", "metrics", "sklearn_model", "regressor"],
+                outputs=["y_pred", "metrics", "sklearn_model", "regressor", "model_selection_name"],
                 name="evaluate_all_models",
             ),
             node(

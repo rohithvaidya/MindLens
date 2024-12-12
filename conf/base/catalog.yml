@@ -50,10 +50,18 @@ data_drift:
   filepath: data/07_model_output/data_drift.json
   versioned: True
 
+model_selection_name:
+  type: json.JSONDataset
+  filepath: data/07_model_output/model_selection
+  
+
 pred_drift:
   type: json.JSONDataset
   filepath: data/07_model_output/pred_drift.json
   versioned: True
+
+
+##
 
 shap_instance_features_to_prediction:
   type: pandas.CSVDataset
@@ -63,7 +71,12 @@ shap_instance_features_away_prediction:
   type: pandas.CSVDataset
   filepath: data/07_model_output/shap_instance_features_away_prediction.json
 
+prediction_confidence:
+  type: json.JSONDataset
+  filepath: data/07_model_output/prediction_confidence
 
+
+##
 dummy_confusion_matrix:
   type: matplotlib.MatplotlibWriter
   filepath: data/08_reporting/dummy_confusion_matrix.png
@@ -90,6 +103,10 @@ data_drift_plotly:
   type: plotly.JSONDataset
   filepath: data/08_reporting/data_drift_plotly.json
   versioned: True
+
+
+####
+
 
 regressor_logistic_regression:
   type: pickle.PickleDataset
@@ -121,6 +138,27 @@ sklearn_model:
         type: kedro_mlflow.io.models.MlflowModelLocalFileSystemDataset
         flavor: mlflow.sklearn
         filepath: data/06_models/sklearn_model
+
+conformal_decision_tree:
+  type: pickle.PickleDataset
+  filepath: data/06_models/conformal_regressor_decision_tree
+
+conformal_logistic_regression:
+  type: pickle.PickleDataset
+  filepath: data/06_models/conformal_logistic_regression
+  
+
+conformal_random_forest:
+  type: pickle.PickleDataset
+  filepath: data/06_models/conformal_random_forest
+
+
+conformal_xg_boost:
+  type: pickle.PickleDataset
+  filepath: data/06_models/conformal_xg_boost
+  
+
+####
 
 X_test:
   type: pandas.CSVDataset
