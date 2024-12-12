@@ -1,6 +1,6 @@
-# quality_drift_check { #nodes.quality_drift_check }
+# quality_drift_check { #data_science.nodes.quality_drift_check }
 
-`quality_drift_check(X_train, X_test)`
+`nodes.quality_drift_check(X_train, X_test)`
 
 Checks for data drift between training and test datasets using predefined metrics.
 

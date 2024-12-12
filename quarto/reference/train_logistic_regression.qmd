@@ -1,6 +1,6 @@
-# train_logistic_regression { #nodes.train_logistic_regression }
+# train_logistic_regression { #data_science.nodes.train_logistic_regression }
 
-`train_logistic_regression(X_train, y_train)`
+`nodes.train_logistic_regression(X_train, y_train)`
 
 Trains the Logistic regression model.
 

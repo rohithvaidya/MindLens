@@ -1,6 +1,6 @@
-# split_data { #nodes.split_data }
+# split_data { #data_science.nodes.split_data }
 
-`split_data(data, parameters)`
+`nodes.split_data(data, parameters)`
 
 Splits data into features and targets training and test sets.
 

@@ -1,0 +1,39 @@
+# compare_trained_models { #model_comparison.nodes.compare_trained_models }
+
+`nodes.compare_trained_models(sklearn_model)`
+
+Compares metrics of the current trained model with those of the previous version and raises an error 
+if the performance of the current model is worse.
+
+This function loads the metrics, data drift, and prediction drift from the last two saved model versions 
+and compares the accuracy (`value_1`) of the current model with the previous one. If the current model's 
+accuracy is lower, an exception can be raised to indicate the regression in performance.
+
+Args:
+    sklearn_model: The current trained scikit-learn model object (not directly used in this implementation).
+
+Workflow:
+    1. Load the latest and previous `data_drift.json`, `pred_drift.json`, and `metrics.json` files 
+       from their respective directories.
+    2. Compare the "value_1" (accuracy) metric from the `metrics.json` files of the latest and previous models.
+    3. Optionally raise an exception if the accuracy of the new model is lower than the previous one.
+
+Notes:
+    - File paths must point to valid JSON files stored in directories under `data/07_model_output/`.
+    - The `metrics.json` file should contain a "value_1" key representing model accuracy.
+    - This implementation currently passes without raising an exception when accuracy decreases, 
+      but the `raise Exception` statement can be uncommented to enforce the check.
+
+Example JSON Structure:
+    metrics.json:
+    {
+        "value_1": 0.85,
+        "value_2": 0.80,
+        ...
+    }
+
+Raises:
+    Exception: If the current model's accuracy ("value_1") is lower than the previous model's.
+
+Output:
+    - Prints the metrics of the current and previous models for comparison.

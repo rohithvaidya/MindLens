@@ -1,6 +1,6 @@
-# train_random_forest { #nodes.train_random_forest }
+# train_random_forest { #data_science.nodes.train_random_forest }
 
-`train_random_forest(X_train, y_train)`
+`nodes.train_random_forest(X_train, y_train)`
 
 Trains the Random Forest model.
 

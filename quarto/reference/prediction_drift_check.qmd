@@ -1,6 +1,6 @@
-# prediction_drift_check { #nodes.prediction_drift_check }
+# prediction_drift_check { #data_science.nodes.prediction_drift_check }
 
-`prediction_drift_check(y_test, y_pred)`
+`nodes.prediction_drift_check(y_test, y_pred)`
 
 Checks for prediction drift between the true and predicted values.
 

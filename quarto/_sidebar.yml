@@ -4,20 +4,46 @@ website:
     - reference/index.qmd
     - contents:
       - reference/LogisticRegression.qmd
-      section: ML Stagewise Documentation
+      section: Module docs - Sklearn
+    - contents:
+      - reference/DecisionTreeClassifier.qmd
+      section: Module docs - Sklearn
+    - contents:
+      - reference/RandomForestClassifier.qmd
+      section: Module docs - Sklearn
+    - contents:
+      - reference/XGBClassifier.qmd
+      section: Module docs - Sklearn
+    - contents:
+      - reference/accuracy_score.qmd
+      - reference/f1_score.qmd
+      - reference/precision_score.qmd
+      - reference/recall_score.qmd
+      section: Module docs - Metrics
     - contents:
       - reference/DataDriftPreset.qmd
-      section: ML Stagewise Documentation
+      section: Module docs - Drift
     - contents:
       - reference/split_data.qmd
       - reference/train_logistic_regression.qmd
       - reference/train_random_forest.qmd
       - reference/train_decision_tree.qmd
       - reference/train_xg_boost.qmd
+      - reference/evaluate_all_models.qmd
       - reference/quality_drift_check.qmd
       - reference/prediction_drift_check.qmd
       - reference/plot_and_save.qmd
       - reference/report_plotly.qmd
-      section: ML Stagewise Documentation
+      section: Data Science Pipeline
+    - contents:
+      - reference/aggregate_shap_explanations.qmd
+      - reference/compare_trained_models.qmd
+      section: Model Comparison Pipeline
+    - contents:
+      - reference/xplain_model_prediction.qmd
+      section: Explainability Pipeline
+    - contents:
+      - reference/serve_model.qmd
+      section: Deploy Pipeline
     id: reference
   - id: dummy-sidebar

@@ -1,6 +1,6 @@
-# report_plotly { #nodes.report_plotly }
+# report_plotly { #data_science.nodes.report_plotly }
 
-`report_plotly(data_drift, pred_drift)`
+`nodes.report_plotly(data_drift, pred_drift)`
 
 Generates and saves distribution plots for data and prediction drift using Plotly.
 

@@ -1,0 +1,44 @@
+# aggregate_shap_explanations { #model_comparison.nodes.aggregate_shap_explanations }
+
+`nodes.aggregate_shap_explanations(X_train, sklearn_model)`
+
+Generates SHAP dependency plots for each feature in the training dataset and saves them as PNG images.
+
+This function uses the SHAP library to calculate SHAP values for a given trained scikit-learn model 
+and the training dataset. For each feature, it creates a scatter plot showing the relationship 
+between feature values and their corresponding SHAP values, and saves the plots in a specified directory.
+
+Args:
+    X_train (pd.DataFrame): The training dataset used for generating SHAP explanations. 
+        Each column corresponds to a feature.
+    sklearn_model: A trained scikit-learn model for which SHAP values will be computed.
+
+Workflow:
+    1. Initializes a SHAP explainer for the model using the training dataset.
+    2. Computes SHAP values for all features in the dataset.
+    3. For each feature:
+        - Extracts feature values and their corresponding SHAP values.
+        - Creates a scatter plot of feature values against SHAP values.
+        - Saves the plot as a PNG image in the `data/08_reporting/` directory.
+
+File Naming Convention:
+    - Output plots are saved as `shap_dependency_scatter_<feature_name>.png`.
+    - Special characters (e.g., '/') in feature names are replaced or ignored in file names.
+
+Notes:
+    - The directory `data/08_reporting/` must exist prior to calling this function.
+    - The function closes each plot after saving to free up memory.
+
+Dependencies:
+    - The `shap` library for computing SHAP values.
+    - The `matplotlib` library for generating plots.
+
+Output:
+    - Scatter plots are saved as PNG files in the specified directory.
+    - No values are returned.
+
+Example:
+    If `X_train` contains features `age`, `income`, and `education`, the function will create:
+    - `shap_dependency_scatter_age.png`
+    - `shap_dependency_scatter_income.png`
+    - `shap_dependency_scatter_education.png`

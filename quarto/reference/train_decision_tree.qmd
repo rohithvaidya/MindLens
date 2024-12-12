@@ -1,6 +1,6 @@
-# train_decision_tree { #nodes.train_decision_tree }
+# train_decision_tree { #data_science.nodes.train_decision_tree }
 
-`train_decision_tree(X_train, y_train)`
+`nodes.train_decision_tree(X_train, y_train)`
 
 Trains the Decision Tree model.
 

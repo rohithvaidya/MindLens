@@ -1,6 +1,6 @@
-# plot_and_save { #nodes.plot_and_save }
+# plot_and_save { #data_science.nodes.plot_and_save }
 
-`plot_and_save(column_name, current_data, reference_data)`
+`nodes.plot_and_save(column_name, current_data, reference_data)`
 
 Plots and saves the probability density distribution for a specified column.
 

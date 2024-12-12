@@ -1,6 +1,6 @@
 # Function reference {.doc .doc-index}
 
-## ML Stagewise Documentation
+## Module docs - Sklearn
 
 Modeling Stage
 
@@ -8,7 +8,42 @@ Modeling Stage
 | --- | --- |
 | [LogisticRegression](LogisticRegression.qmd#sklearn.linear_model.LogisticRegression) | Logistic Regression (aka logit, MaxEnt) classifier. |
 
-## ML Stagewise Documentation
+## Module docs - Sklearn
+
+Modeling Stage
+
+| | |
+| --- | --- |
+| [DecisionTreeClassifier](DecisionTreeClassifier.qmd#sklearn.tree.DecisionTreeClassifier) | A decision tree classifier. |
+
+## Module docs - Sklearn
+
+Modeling Stage
+
+| | |
+| --- | --- |
+| [RandomForestClassifier](RandomForestClassifier.qmd#sklearn.ensemble.RandomForestClassifier) | A random forest classifier. |
+
+## Module docs - Sklearn
+
+Modeling Stage
+
+| | |
+| --- | --- |
+| [XGBClassifier](XGBClassifier.qmd#xgboost.XGBClassifier) |  |
+
+## Module docs - Metrics
+
+Reporting
+
+| | |
+| --- | --- |
+| [accuracy_score](accuracy_score.qmd#sklearn.metrics.accuracy_score) | Accuracy classification score. |
+| [f1_score](f1_score.qmd#sklearn.metrics.f1_score) | Compute the F1 score, also known as balanced F-score or F-measure. |
+| [precision_score](precision_score.qmd#sklearn.metrics.precision_score) | Compute the precision. |
+| [recall_score](recall_score.qmd#sklearn.metrics.recall_score) | Compute the recall. |
+
+## Module docs - Drift
 
 Drift Stage
 
@@ -16,18 +51,44 @@ Drift Stage
 | --- | --- |
 | [DataDriftPreset](DataDriftPreset.qmd#evidently.metric_preset.DataDriftPreset) | Metric Preset for Data Drift analysis. |
 
-## ML Stagewise Documentation
+## Data Science Pipeline
 
-Nodes
+Node Level Docs for the pipeline
 
 | | |
 | --- | --- |
-| [split_data](split_data.qmd#nodes.split_data) | Splits data into features and targets training and test sets. |
-| [train_logistic_regression](train_logistic_regression.qmd#nodes.train_logistic_regression) | Trains the Logistic regression model. |
-| [train_random_forest](train_random_forest.qmd#nodes.train_random_forest) | Trains the Random Forest model. |
-| [train_decision_tree](train_decision_tree.qmd#nodes.train_decision_tree) | Trains the Decision Tree model. |
-| [train_xg_boost](train_xg_boost.qmd#nodes.train_xg_boost) | Trains the Decision Tree model. |
-| [quality_drift_check](quality_drift_check.qmd#nodes.quality_drift_check) | Checks for data drift between training and test datasets using predefined metrics. |
-| [prediction_drift_check](prediction_drift_check.qmd#nodes.prediction_drift_check) | Checks for prediction drift between the true and predicted values. |
-| [plot_and_save](plot_and_save.qmd#nodes.plot_and_save) | Plots and saves the probability density distribution for a specified column. |
-| [report_plotly](report_plotly.qmd#nodes.report_plotly) | Generates and saves distribution plots for data and prediction drift using Plotly. |
+| [split_data](split_data.qmd#data_science.nodes.split_data) | Splits data into features and targets training and test sets. |
+| [train_logistic_regression](train_logistic_regression.qmd#data_science.nodes.train_logistic_regression) | Trains the Logistic regression model. |
+| [train_random_forest](train_random_forest.qmd#data_science.nodes.train_random_forest) | Trains the Random Forest model. |
+| [train_decision_tree](train_decision_tree.qmd#data_science.nodes.train_decision_tree) | Trains the Decision Tree model. |
+| [train_xg_boost](train_xg_boost.qmd#data_science.nodes.train_xg_boost) | Trains the Decision Tree model. |
+| [evaluate_all_models](evaluate_all_models.qmd#data_science.nodes.evaluate_all_models) | Evaluates multiple machine learning models on test data and selects the best model based on the F1 score. |
+| [quality_drift_check](quality_drift_check.qmd#data_science.nodes.quality_drift_check) | Checks for data drift between training and test datasets using predefined metrics. |
+| [prediction_drift_check](prediction_drift_check.qmd#data_science.nodes.prediction_drift_check) | Checks for prediction drift between the true and predicted values. |
+| [plot_and_save](plot_and_save.qmd#data_science.nodes.plot_and_save) | Plots and saves the probability density distribution for a specified column. |
+| [report_plotly](report_plotly.qmd#data_science.nodes.report_plotly) | Generates and saves distribution plots for data and prediction drift using Plotly. |
+
+## Model Comparison Pipeline
+
+Node Level Docs for the pipeline
+
+| | |
+| --- | --- |
+| [aggregate_shap_explanations](aggregate_shap_explanations.qmd#model_comparison.nodes.aggregate_shap_explanations) | Generates SHAP dependency plots for each feature in the training dataset and saves them as PNG images. |
+| [compare_trained_models](compare_trained_models.qmd#model_comparison.nodes.compare_trained_models) | Compares metrics of the current trained model with those of the previous version and raises an error  |
+
+## Explainability Pipeline
+
+Node Level Docs for the pipeline
+
+| | |
+| --- | --- |
+| [xplain_model_prediction](xplain_model_prediction.qmd#model_xplain.nodes.xplain_model_prediction) | Explains a model's prediction for a specific user using SHAP values. |
+
+## Deploy Pipeline
+
+Node Level Docs for the pipeline
+
+| | |
+| --- | --- |
+| [serve_model](serve_model.qmd#deploy.nodes.serve_model) | Serves a machine learning model using MLflow in a Windows environment. |

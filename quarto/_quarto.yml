@@ -10,15 +10,51 @@ quartodoc:
   sidebar: _sidebar.yml
   package: quartodoc
   #source_dir: E:/Lab Files/Repos/rohith-ai-839/src/rohith_ai_839/pipelines/data_science/
-  source_dir: ../src/rohith_ai_839/pipelines/data_science/
+  source_dir: ../src/rohith_ai_839/pipelines/
   sections:
-    - title: Module docs - ML
+    - title: Module docs - Sklearn
       desc: Modeling Stage
       package: sklearn.linear_model
       contents: 
         # the functions being documented in the package.
         # you can refer to anything: class methods, modules, etc..
         - LogisticRegression
+
+    - title: Module docs - Sklearn
+      desc: Modeling Stage
+      package:  sklearn.tree
+      contents: 
+        # the functions being documented in the package.
+        # you can refer to anything: class methods, modules, etc..
+        - DecisionTreeClassifier
+
+    - title: Module docs - Sklearn
+      desc: Modeling Stage
+      package:  sklearn.ensemble
+      contents: 
+        # the functions being documented in the package.
+        # you can refer to anything: class methods, modules, etc..
+        - RandomForestClassifier
+
+    - title: Module docs - Sklearn
+      desc: Modeling Stage
+      package:  xgboost
+      contents: 
+        # the functions being documented in the package.
+        # you can refer to anything: class methods, modules, etc..
+        - XGBClassifier
+
+    - title: Module docs - Metrics
+      desc: Reporting
+      package:  sklearn.metrics
+      contents: 
+        # the functions being documented in the package.
+        # you can refer to anything: class methods, modules, etc..
+        - accuracy_score
+        - f1_score 
+        - precision_score
+        - recall_score
+
     - title: Module docs - Drift
       desc: Drift Stage
       package: evidently.metric_preset
@@ -27,9 +63,9 @@ quartodoc:
         # you can refer to anything: class methods, modules, etc..
         - DataDriftPreset
 
-    - title: Mlops node documentation
-      desc: Functionalities in the MLOps workflow
-      package: nodes
+    - title: Data Science Pipeline
+      desc: Node Level Docs for the pipeline
+      package: data_science.nodes
       contents: 
         # the functions being documented in the package.
         # you can refer to anything: class methods, modules, etc..
@@ -43,6 +79,31 @@ quartodoc:
         - prediction_drift_check
         - plot_and_save
         - report_plotly
+
+    - title: Model Comparison Pipeline
+      desc: Node Level Docs for the pipeline
+      package: model_comparison.nodes
+      contents: 
+        # the functions being documented in the package.
+        # you can refer to anything: class methods, modules, etc..
+        - aggregate_shap_explanations
+        - compare_trained_models
+
+    - title: Explainability Pipeline
+      desc: Node Level Docs for the pipeline
+      package: model_xplain.nodes
+      contents: 
+        # the functions being documented in the package.
+        # you can refer to anything: class methods, modules, etc..
+        - xplain_model_prediction
+
+    - title: Deploy Pipeline
+      desc: Node Level Docs for the pipeline
+      package: deploy.nodes
+      contents: 
+        # the functions being documented in the package.
+        # you can refer to anything: class methods, modules, etc..
+        - serve_model
 
 website:
   title: "MindLens - Technical Documentation"
