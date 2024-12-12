@@ -66,12 +66,6 @@ def create_pipeline(**kwargs) -> Pipeline:
                 name="data_quality_check",
             ),
             node(
-                func=prediction_drift_check,
-                inputs=["y_test", "y_pred"],
-                outputs="pred_drift",
-                name="pred_drift_check",
-            ),
-            node(
                 func=report_plotly,
                 inputs=["data_drift", "pred_drift"],
                 outputs=None,
@@ -79,3 +73,11 @@ def create_pipeline(**kwargs) -> Pipeline:
             ),
         ]
     )
+
+
+"""node(
+                func=prediction_drift_check,
+                inputs=["user_accounts_predictions_log", "y_test"],
+                outputs="pred_drift",
+                name="prediction_drift_check",
+            )"""

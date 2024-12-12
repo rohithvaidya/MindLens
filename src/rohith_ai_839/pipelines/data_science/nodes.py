@@ -275,7 +275,7 @@ def evaluate_all_models(
     return y_pred, metrics, regressor, regressor, {"model":model}
 
 
-def prediction_drift_check(y_test: pd.Series, y_pred: pd.Series):
+def prediction_drift_check(user_df, y_test: pd.Series):
     """
     Checks for prediction drift between the true and predicted values.
 
@@ -300,15 +300,19 @@ def prediction_drift_check(y_test: pd.Series, y_pred: pd.Series):
     ------------
     An HTML file named 'evidently_plot.html' is saved to 'data/08_reporting/' containing the visual report.
     """
+
+    
     report = Report(
         metrics=[
             DataDriftPreset(),
         ]
     )
 
+    
+
     report.run(
         reference_data=y_test,
-        current_data=pd.DataFrame(y_pred, columns=["Depression"]),
+        current_data=pd.DataFrame(user_df["Depression"]),
     )
 
     if json.loads(report.json())["metrics"][1]["result"]["drift_by_columns"][
@@ -318,7 +322,7 @@ def prediction_drift_check(y_test: pd.Series, y_pred: pd.Series):
     else:
         report.save_html("data/08_reporting/evidently_plot.html")
         return json.loads(report.json())
-
+    
 
 def plot_and_save(column_name, current_data, reference_data):
     """
