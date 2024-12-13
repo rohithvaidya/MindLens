@@ -18,11 +18,9 @@ The mission of MindLens is to make mental health care accessible, reliable, and 
 ---
 
 ## **Tech Stack**  
-- **Frontend**: React.js  
-- **Backend**: Django REST Framework  
-- **Database**: PostgreSQL  
-- **ML Frameworks**: TensorFlow, Scikit-learn  
-- **Other Tools**: Docker, Kubernetes, CI/CD pipelines  
+- **Frontend**: HTML, CSS, JS
+- **Controller Module**: Flask  
+- **ML Frameworks**: Kedro, Scikit learn, xg boost 
 
 ---
 
